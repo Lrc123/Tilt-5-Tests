@@ -29,6 +29,8 @@ public class WindForce : MonoBehaviour
 
     public float accelerator = 0;
 
+    public Light light;
+
     void Start()
     {
         line = GetComponent<LineRenderer>();
@@ -60,6 +62,7 @@ public class WindForce : MonoBehaviour
         if (!isCoolDown)
         {
             accelerator = TiltFive.Input.GetTrigger(ControllerIndex.Primary);
+            Debug.Log("accelerator" + accelerator + "time: " + Time.time);
         }
         else
         {
@@ -69,20 +72,16 @@ public class WindForce : MonoBehaviour
         {
             accelerator = 0f;
             isRunning = false;
-            if (windParticle.isPlaying)
-            {
-                windParticle.Stop();
-            }
+            light.intensity = 0;
+            windParticle.Stop();
         }
         else
         {
             isRunning = true;
-            if (!windParticle.isPlaying)
-            {
-                windParticle.Play();
-            }
             windParticle.startColor = Color.grey * windForce / maxWindForce;
             windParticle.startSpeed = windStartSpeed * windForce / maxWindForce;
+            light.intensity = 100;
+            windParticle.Play();
         }
         windForce = accelerator * maxWindForce;
         forceDir = vacumDir;

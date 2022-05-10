@@ -11,13 +11,13 @@ public class BallSpawner : MonoBehaviour
 
     private void Start()
     {
+        // Set up the spawnTransforms array with child "spawn position" transforms
         int numChildren = transform.childCount;
         spawnTransforms = new Transform[numChildren];
         for (int i = 0; i < numChildren; ++i)
         {
             spawnTransforms[i] = transform.GetChild(i);
         }
-            
     }
 
     public void SpawnBall()
