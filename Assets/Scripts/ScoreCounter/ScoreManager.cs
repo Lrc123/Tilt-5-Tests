@@ -29,19 +29,19 @@ public class ScoreManager : MonoBehaviour
     {
         if (i == 0)
         {
-            oneCard.GetComponent<Animator>().SetTrigger("Flip");
+            //oneCard.GetComponent<Animator>().SetTrigger("Flip");
             scoreCard[0] = score % 10;
             oneCard.transform.GetChild(0).GetComponent<Text>().text = scoreCard[0].ToString();
         }
         if (i == 1)
         {
-            tenCard.GetComponent<Animator>().SetTrigger("Flip");
+            //tenCard.GetComponent<Animator>().SetTrigger("Flip");
             scoreCard[1] = Mathf.Floor((score % 100) / 10);
             tenCard.transform.GetChild(0).GetComponent<Text>().text = scoreCard[1].ToString();
         }
         if (i == 2)
         {
-            hundredCard.GetComponent<Animator>().SetTrigger("Flip");
+            //hundredCard.GetComponent<Animator>().SetTrigger("Flip");
             scoreCard[2] = Mathf.Floor((score / 100) % 10);
             hundredCard.transform.GetChild(0).GetComponent<Text>().text = scoreCard[2].ToString();
         }
