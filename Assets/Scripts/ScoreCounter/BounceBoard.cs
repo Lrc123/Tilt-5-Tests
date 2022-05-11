@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class BounceBoard : MonoBehaviour
 {
-    public ScoreManager sManager;
+    private ScoreManager scoreManager;
+    private SfxManager sfxManager;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        scoreManager = FindObjectOfType<ScoreManager>();
+        sfxManager = FindObjectOfType<SfxManager>();
     }
 
     // Update is called once per frame
@@ -18,6 +21,7 @@ public class BounceBoard : MonoBehaviour
     }
     void OnCollisionEnter(Collision collisionInfo)
     {
-        sManager.score++;
+        scoreManager.score++;
+        sfxManager.PlayBumperSound();
     }
 }
