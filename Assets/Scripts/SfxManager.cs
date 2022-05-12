@@ -10,12 +10,18 @@ public class SfxManager : MonoBehaviour
     private AudioClip[] flipperSounds;
     [SerializeField]
     private AudioClip[] scoreSounds;
+    public AudioClip jetOnSound;
+    public AudioClip jetOffSound;
 
     private AudioSource audioSource;
+    private AudioSource jetAudioSource;
+
+    private bool isJetPlaying;
 
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        jetAudioSource = GetComponentInChildren<AudioSource>();
     }
 
     public void PlayBumperSound()
@@ -27,5 +33,33 @@ public class SfxManager : MonoBehaviour
         audioSource.PlayOneShot(bellSounds[bellIndex]);
         audioSource.PlayOneShot(flipperSounds[flipperIndex]);
         audioSource.PlayOneShot(scoreSounds[scoreIndex]);
+    }
+
+    public void PlayJetSound()
+    {
+        if (!isJetPlaying)
+        {
+            audioSource.PlayOneShot(jetOnSound);
+            StopAllCoroutines();
+            StartCoroutine(DelayJetLoop());
+            isJetPlaying = true;
+        }
+    }
+
+    public void StopJetSound()
+    {
+        if (isJetPlaying)
+        {
+            audioSource.PlayOneShot(jetOffSound);
+            jetAudioSource.Stop();
+            StopAllCoroutines();
+            isJetPlaying = false;
+        }
+    }
+
+    private IEnumerator DelayJetLoop()
+    {
+        yield return new WaitForSeconds(0.1f);
+        jetAudioSource.Play();
     }
 }

@@ -31,9 +31,13 @@ public class WindForce : MonoBehaviour
 
     public Light light;
 
+    private SfxManager sfxManager;
+
     void Start()
     {
         line = GetComponent<LineRenderer>();
+
+        sfxManager = FindObjectOfType<SfxManager>();
     }
 
     void Update()
