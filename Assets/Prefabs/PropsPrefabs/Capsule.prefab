@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1128778411417188218}
   - component: {fileID: 3351364525473703806}
   - component: {fileID: 5408552592822598289}
+  - component: {fileID: -7237669824313911150}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -62,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: b1b99a300da6d034aa0a0c1f4167e321, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -98,3 +99,15 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-7237669824313911150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5227404681107662461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b07269618f33479428c34ca7c17a1f4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
