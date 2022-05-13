@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8988962748092806069}
   - component: {fileID: 1194209310286707549}
   - component: {fileID: 6525616379530359482}
+  - component: {fileID: 3713126601481979771}
   m_Layer: 6
   m_Name: Bumper
   m_TagString: Untagged
@@ -62,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a27551687bb612f4db1a26708e4dfc58, type: 2}
+  - {fileID: 2100000, guid: 6a9997e5efbab18439b6c31080379f87, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -98,3 +99,22 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &3713126601481979771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 409674733428740983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11a95195b7984084189556503955bd1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  glowRenderer: {fileID: 0}
+  emissiveMaterial: {fileID: 0}
+  timeCounting: 0
+  scoreType: 5
+  scorePop: {fileID: 2781891799918360654, guid: 3c59ea34b4ee35e43aa904745ab2c7a8, type: 3}
+  popEffect: {fileID: 1263830474501779514, guid: 38a30f8e29040bc4b8a06766082d2c83, type: 3}
+  duration: 1

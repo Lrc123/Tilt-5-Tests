@@ -30,7 +30,7 @@ public class VacuumManager : MonoBehaviour
     {
         energyBar.fillAmount = energyBarFillAmount;
 
-        sfxManager.jetAudioFilter.cutoffFrequency = Mathf.Lerp(100f, 15000f, energyBarFillAmount);
+        sfxManager.jetAudioFilter.cutoffFrequency = Mathf.Lerp(300f, 15000f, energyBarFillAmount);
 
         WindForce windLauncher = WindForceObj.GetComponent<WindForce>();
         if (windLauncher.isRunning)

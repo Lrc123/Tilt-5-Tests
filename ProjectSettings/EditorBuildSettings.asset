@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/JaiScene.unity
-    guid: c0f7a39d6e0f8b04a89d68c96583a50e
+    path: Assets/Scenes/LevelSmallBall.unity
+    guid: da6c27164f5b92f4e869ac9c9264b756
   m_configObjects: {}

@@ -18,16 +18,19 @@ public class BounceBoard : MonoBehaviour
     [SerializeField]
     private float duration = 1;
     private float intensity = 5f;
+    private GameObject tmpScorePop;
 
     // Start is called before the first frame update
     void Start()
     {
-        scoreManager = FindObjectOfType<ScoreManager>();
         sfxManager = FindObjectOfType<SfxManager>();
         glowRenderer = GetComponent<Renderer>();
         emissiveMaterial = glowRenderer.GetComponent<Renderer>().material;
         emissiveMaterial.EnableKeyword("_EMISSION");
         curColor = originalColor = emissiveMaterial.color;
+        //scorePop = GameObject.FindGameObjectWithTag("Score Pop");
+        tmpScorePop = Instantiate(scorePop, transform.position + new Vector3(0, 3, 0), Quaternion.identity);
+        scoreManager = FindObjectOfType<ScoreManager>();
     }
 
     // Update is called once per frame
@@ -52,7 +55,8 @@ public class BounceBoard : MonoBehaviour
         timeCounting = Time.time;
         curColor = originalColor * intensity;
         emissiveMaterial.SetColor("_EmissionColor", curColor);
-        scorePop.GetComponent<Animator>().SetTrigger("Pop");
+        tmpScorePop.transform.GetChild(0).GetChild(0).GetComponent<Animator>().SetTrigger("Pop");
+        //scorePop.GetComponent<Animator>().SetTrigger("Pop");
         GameObject bumperEffect = GameObject.Instantiate(popEffect, transform.position + new Vector3(0, 3, 0), Quaternion.identity);
 
         Destroy(bumperEffect, 1);

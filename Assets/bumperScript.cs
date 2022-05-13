@@ -18,10 +18,9 @@ public class bumperScript : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.name == "SmallBall")
+        if (collision.gameObject.tag == "WindAffectable")
         {
             gameObject.SetActive (false);
-
         }
     }
 }

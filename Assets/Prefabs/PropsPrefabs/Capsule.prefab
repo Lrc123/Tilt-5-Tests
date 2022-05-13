@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3351364525473703806}
   - component: {fileID: 5408552592822598289}
   - component: {fileID: -7237669824313911150}
+  - component: {fileID: 6340026869295468946}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -111,3 +112,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b07269618f33479428c34ca7c17a1f4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6340026869295468946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5227404681107662461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11a95195b7984084189556503955bd1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  glowRenderer: {fileID: 0}
+  emissiveMaterial: {fileID: 0}
+  timeCounting: 0
+  scoreType: 5
+  scorePop: {fileID: 0}
+  popEffect: {fileID: 1263830474501779514, guid: 38a30f8e29040bc4b8a06766082d2c83, type: 3}
+  duration: 1
