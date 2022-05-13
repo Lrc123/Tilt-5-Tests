@@ -17,18 +17,20 @@ public class SfxManager : MonoBehaviour
     public float fadeControlRate = 0.01f;
 
     private AudioSource audioSource;
-    private AudioSource jetAudioSource;
+    public AudioSource jetAudioSource;
+    public AudioLowPassFilter jetAudioFilter;
 
     private bool isJetPlaying;
 
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        jetAudioSource = GetComponentInChildren<AudioSource>();
     }
 
     public void PlayBumperSound()
     {
+        Debug.Log("Bumper Sound");
+
         int bellIndex = Random.Range(0, bellSounds.Length);
         int flipperIndex = Random.Range(0, flipperSounds.Length);
         int scoreIndex = Random.Range(0, scoreSounds.Length);
@@ -40,38 +42,35 @@ public class SfxManager : MonoBehaviour
 
     public void PlayJetSound()
     {
-        StopAllCoroutines();
-        StartCoroutine(JetFadeIn());
-
-        //if (!isJetPlaying)
-        //{
-        //    audioSource.PlayOneShot(jetOnSound);
-        //    StopAllCoroutines();
-        //    StartCoroutine(DelayJetLoop());
-        //    isJetPlaying = true;
-        //}
+        if (!isJetPlaying)
+        {
+            //audioSource.PlayOneShot(jetOnSound);
+            StopAllCoroutines();
+            StartCoroutine(JetFadeIn());
+            isJetPlaying = true;
+        }
     }
 
     public void StopJetSound()
     {
-        StopAllCoroutines();
-        StartCoroutine(JetFadeOut());
-
-        //if (isJetPlaying)
-        //{
-        //    audioSource.PlayOneShot(jetOffSound);
-        //    jetAudioSource.Stop();
-        //    StopAllCoroutines();
-        //    isJetPlaying = false;
-        //}
+        if (isJetPlaying)
+        {
+            //audioSource.PlayOneShot(jetOffSound);
+            StopAllCoroutines();
+            StartCoroutine(JetFadeOut());
+            isJetPlaying = false;
+        }
     }
 
     private IEnumerator JetFadeIn()
     {
+        Debug.Log("Jet Fade In");
+
         if (!jetAudioSource.isPlaying)
         {
             jetAudioSource.volume = 0f;
             jetAudioSource.pitch = 0.5f;
+            jetAudioFilter.cutoffFrequency = 15000f;
             jetAudioSource.Play();
         }
 
@@ -89,6 +88,8 @@ public class SfxManager : MonoBehaviour
 
     private IEnumerator JetFadeOut()
     {
+        Debug.Log("Jet Fade Out");
+
         WaitForSeconds wait = new WaitForSeconds(fadeControlRate);
 
         while (jetAudioSource.volume > 0f)

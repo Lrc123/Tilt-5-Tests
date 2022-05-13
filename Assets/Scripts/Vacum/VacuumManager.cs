@@ -10,9 +10,13 @@ public class VacuumManager : MonoBehaviour
     public float energyBarFillAmount = 0f;
     public GameObject WindForceObj;
     public float coolDownDuration = 1.5f;
+
+    private SfxManager sfxManager;
     
     void Start()
     {
+        sfxManager = FindObjectOfType<SfxManager>();
+
         energyBarFillAmount = 1f;
         energyBar.fillAmount = energyBarFillAmount;
     }
@@ -25,6 +29,9 @@ public class VacuumManager : MonoBehaviour
     private void HandleHeathBar()
     {
         energyBar.fillAmount = energyBarFillAmount;
+
+        sfxManager.jetAudioFilter.cutoffFrequency = Mathf.Lerp(100f, 15000f, energyBarFillAmount);
+
         WindForce windLauncher = WindForceObj.GetComponent<WindForce>();
         if (windLauncher.isRunning)
         {

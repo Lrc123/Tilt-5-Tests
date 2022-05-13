@@ -47,7 +47,7 @@ public class BounceBoard : MonoBehaviour
     }
     void OnCollisionEnter(Collision collisionInfo)
     {
-        scoreManager.score =+ scoreType;
+        scoreManager.score += scoreType;
         scorePop.GetComponent<Animator>().SetTrigger("Pop");
         GameObject bumperEffect = GameObject.Instantiate(popEffect, transform.position + new Vector3(0, 3, 0), Quaternion.identity);
         Destroy(bumperEffect, 1);

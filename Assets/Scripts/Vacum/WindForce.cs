@@ -78,6 +78,8 @@ public class WindForce : MonoBehaviour
             isRunning = false;
             light.intensity = 0;
             windParticle.Stop();
+
+            sfxManager.StopJetSound();
         }
         else
         {
@@ -86,6 +88,8 @@ public class WindForce : MonoBehaviour
             windParticle.startSpeed = windStartSpeed * windForce / maxWindForce;
             light.intensity = 100;
             windParticle.Play();
+
+            sfxManager.PlayJetSound();
         }
         windForce = accelerator * maxWindForce;
         forceDir = vacumDir;

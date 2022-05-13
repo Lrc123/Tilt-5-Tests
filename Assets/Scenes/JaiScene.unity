@@ -257,6 +257,9 @@ MonoBehaviour:
   glowRenderer: {fileID: 0}
   emissiveMaterial: {fileID: 0}
   timeCounting: 0
+  scoreType: 10
+  scorePop: {fileID: 0}
+  popEffect: {fileID: 0}
   duration: 1
 --- !u!1 &46964273
 GameObject:
@@ -6271,6 +6274,9 @@ MonoBehaviour:
   glowRenderer: {fileID: 0}
   emissiveMaterial: {fileID: 0}
   timeCounting: 0
+  scoreType: 10
+  scorePop: {fileID: 0}
+  popEffect: {fileID: 0}
   duration: 1
 --- !u!1 &255984240
 GameObject:
@@ -7254,6 +7260,9 @@ MonoBehaviour:
   glowRenderer: {fileID: 0}
   emissiveMaterial: {fileID: 0}
   timeCounting: 0
+  scoreType: 10
+  scorePop: {fileID: 0}
+  popEffect: {fileID: 0}
   duration: 1
 --- !u!1 &414072148
 GameObject:
@@ -7579,6 +7588,9 @@ MonoBehaviour:
   glowRenderer: {fileID: 0}
   emissiveMaterial: {fileID: 0}
   timeCounting: 0
+  scoreType: 10
+  scorePop: {fileID: 0}
+  popEffect: {fileID: 0}
   duration: 1
 --- !u!1 &464363601
 GameObject:
@@ -7679,6 +7691,9 @@ MonoBehaviour:
   glowRenderer: {fileID: 0}
   emissiveMaterial: {fileID: 0}
   timeCounting: 0
+  scoreType: 10
+  scorePop: {fileID: 0}
+  popEffect: {fileID: 0}
   duration: 1
 --- !u!1 &494347585
 GameObject:
@@ -7836,6 +7851,9 @@ MonoBehaviour:
   glowRenderer: {fileID: 0}
   emissiveMaterial: {fileID: 0}
   timeCounting: 0
+  scoreType: 10
+  scorePop: {fileID: 0}
+  popEffect: {fileID: 0}
   duration: 1
 --- !u!1 &538523430
 GameObject:
@@ -9688,6 +9706,9 @@ MonoBehaviour:
   glowRenderer: {fileID: 0}
   emissiveMaterial: {fileID: 0}
   timeCounting: 0
+  scoreType: 10
+  scorePop: {fileID: 0}
+  popEffect: {fileID: 0}
   duration: 1
 --- !u!1 &670125917
 GameObject:
@@ -11239,6 +11260,9 @@ MonoBehaviour:
   glowRenderer: {fileID: 0}
   emissiveMaterial: {fileID: 0}
   timeCounting: 0
+  scoreType: 10
+  scorePop: {fileID: 0}
+  popEffect: {fileID: 0}
   duration: 1
 --- !u!1 &876307477
 GameObject:
@@ -11602,6 +11626,9 @@ MonoBehaviour:
   glowRenderer: {fileID: 0}
   emissiveMaterial: {fileID: 0}
   timeCounting: 0
+  scoreType: 10
+  scorePop: {fileID: 0}
+  popEffect: {fileID: 0}
   duration: 1
 --- !u!1 &909983565
 GameObject:
@@ -12545,6 +12572,9 @@ MonoBehaviour:
   glowRenderer: {fileID: 0}
   emissiveMaterial: {fileID: 0}
   timeCounting: 0
+  scoreType: 10
+  scorePop: {fileID: 0}
+  popEffect: {fileID: 0}
   duration: 1
 --- !u!1 &1064113492 stripped
 GameObject:
@@ -12566,6 +12596,9 @@ MonoBehaviour:
   glowRenderer: {fileID: 0}
   emissiveMaterial: {fileID: 0}
   timeCounting: 0
+  scoreType: 10
+  scorePop: {fileID: 0}
+  popEffect: {fileID: 0}
   duration: 1
 --- !u!1 &1064351567
 GameObject:
@@ -13171,6 +13204,9 @@ MonoBehaviour:
   glowRenderer: {fileID: 0}
   emissiveMaterial: {fileID: 0}
   timeCounting: 0
+  scoreType: 10
+  scorePop: {fileID: 0}
+  popEffect: {fileID: 0}
   duration: 1
 --- !u!1 &1192837076
 GameObject:
@@ -13392,6 +13428,9 @@ MonoBehaviour:
   glowRenderer: {fileID: 0}
   emissiveMaterial: {fileID: 0}
   timeCounting: 0
+  scoreType: 10
+  scorePop: {fileID: 0}
+  popEffect: {fileID: 0}
   duration: 1
 --- !u!1 &1215356609
 GameObject:
@@ -13731,6 +13770,9 @@ MonoBehaviour:
   glowRenderer: {fileID: 0}
   emissiveMaterial: {fileID: 0}
   timeCounting: 0
+  scoreType: 10
+  scorePop: {fileID: 0}
+  popEffect: {fileID: 0}
   duration: 1
 --- !u!1 &1269102711
 GameObject:
@@ -15071,6 +15113,9 @@ MonoBehaviour:
   glowRenderer: {fileID: 0}
   emissiveMaterial: {fileID: 0}
   timeCounting: 0
+  scoreType: 10
+  scorePop: {fileID: 0}
+  popEffect: {fileID: 0}
   duration: 1
 --- !u!1 &1439515793
 GameObject:
@@ -15223,6 +15268,9 @@ MonoBehaviour:
   glowRenderer: {fileID: 0}
   emissiveMaterial: {fileID: 0}
   timeCounting: 0
+  scoreType: 10
+  scorePop: {fileID: 0}
+  popEffect: {fileID: 0}
   duration: 1
 --- !u!1 &1464323059 stripped
 GameObject:
@@ -15244,6 +15292,9 @@ MonoBehaviour:
   glowRenderer: {fileID: 0}
   emissiveMaterial: {fileID: 0}
   timeCounting: 0
+  scoreType: 10
+  scorePop: {fileID: 0}
+  popEffect: {fileID: 0}
   duration: 1
 --- !u!4 &1512133789 stripped
 Transform:
@@ -15542,6 +15593,9 @@ MonoBehaviour:
   glowRenderer: {fileID: 0}
   emissiveMaterial: {fileID: 0}
   timeCounting: 0
+  scoreType: 10
+  scorePop: {fileID: 0}
+  popEffect: {fileID: 0}
   duration: 1
 --- !u!1 &1577948668
 GameObject:
@@ -15817,6 +15871,9 @@ MonoBehaviour:
   glowRenderer: {fileID: 0}
   emissiveMaterial: {fileID: 0}
   timeCounting: 0
+  scoreType: 10
+  scorePop: {fileID: 0}
+  popEffect: {fileID: 0}
   duration: 1
 --- !u!1 &1600308808
 GameObject:
@@ -16356,6 +16413,9 @@ MonoBehaviour:
   glowRenderer: {fileID: 0}
   emissiveMaterial: {fileID: 0}
   timeCounting: 0
+  scoreType: 10
+  scorePop: {fileID: 0}
+  popEffect: {fileID: 0}
   duration: 1
 --- !u!1 &1681586414
 GameObject:
@@ -21910,6 +21970,9 @@ MonoBehaviour:
   glowRenderer: {fileID: 0}
   emissiveMaterial: {fileID: 0}
   timeCounting: 0
+  scoreType: 10
+  scorePop: {fileID: 0}
+  popEffect: {fileID: 0}
   duration: 1
 --- !u!1 &1783592817
 GameObject:
@@ -22821,6 +22884,9 @@ MonoBehaviour:
   glowRenderer: {fileID: 0}
   emissiveMaterial: {fileID: 0}
   timeCounting: 0
+  scoreType: 10
+  scorePop: {fileID: 0}
+  popEffect: {fileID: 0}
   duration: 1
 --- !u!1 &1906717392
 GameObject:
@@ -23718,6 +23784,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: cdb897570a743ce49a8e3f9e8a285301, type: 3}
   jetOnSound: {fileID: 8300000, guid: fba8b6c94f6f916449d39835e661e574, type: 3}
   jetOffSound: {fileID: 8300000, guid: e9ebd0199e47688468b1f4f626cb6727, type: 3}
+  jetFadeTime: 0.2
+  fadeControlRate: 0.01
+  jetAudioSource: {fileID: 216514040}
 --- !u!82 &1996347949
 AudioSource:
   m_ObjectHideFlags: 0
@@ -24048,6 +24117,9 @@ MonoBehaviour:
   glowRenderer: {fileID: 0}
   emissiveMaterial: {fileID: 0}
   timeCounting: 0
+  scoreType: 10
+  scorePop: {fileID: 0}
+  popEffect: {fileID: 0}
   duration: 1
 --- !u!1 &2032234463
 GameObject:
