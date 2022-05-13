@@ -13,6 +13,9 @@ public class SfxManager : MonoBehaviour
     public AudioClip jetOnSound;
     public AudioClip jetOffSound;
 
+    public float jetFadeTime = 0.2f;
+    public float fadeControlRate = 0.01f;
+
     private AudioSource audioSource;
     private AudioSource jetAudioSource;
 
@@ -37,29 +40,67 @@ public class SfxManager : MonoBehaviour
 
     public void PlayJetSound()
     {
-        if (!isJetPlaying)
-        {
-            audioSource.PlayOneShot(jetOnSound);
-            StopAllCoroutines();
-            StartCoroutine(DelayJetLoop());
-            isJetPlaying = true;
-        }
+        StopAllCoroutines();
+        StartCoroutine(JetFadeIn());
+
+        //if (!isJetPlaying)
+        //{
+        //    audioSource.PlayOneShot(jetOnSound);
+        //    StopAllCoroutines();
+        //    StartCoroutine(DelayJetLoop());
+        //    isJetPlaying = true;
+        //}
     }
 
     public void StopJetSound()
     {
-        if (isJetPlaying)
+        StopAllCoroutines();
+        StartCoroutine(JetFadeOut());
+
+        //if (isJetPlaying)
+        //{
+        //    audioSource.PlayOneShot(jetOffSound);
+        //    jetAudioSource.Stop();
+        //    StopAllCoroutines();
+        //    isJetPlaying = false;
+        //}
+    }
+
+    private IEnumerator JetFadeIn()
+    {
+        if (!jetAudioSource.isPlaying)
         {
-            audioSource.PlayOneShot(jetOffSound);
-            jetAudioSource.Stop();
-            StopAllCoroutines();
-            isJetPlaying = false;
+            jetAudioSource.volume = 0f;
+            jetAudioSource.pitch = 0.5f;
+            jetAudioSource.Play();
+        }
+
+        WaitForSeconds wait = new WaitForSeconds(fadeControlRate);
+
+        float increment = fadeControlRate / jetFadeTime;
+
+        while (jetAudioSource.volume < 1f)
+        {
+            jetAudioSource.volume = Mathf.Min(jetAudioSource.volume + 0.05f, 1f);
+            jetAudioSource.pitch = Mathf.Min(jetAudioSource.pitch + 0.025f, 1f);
+            yield return wait;
         }
     }
 
-    private IEnumerator DelayJetLoop()
+    private IEnumerator JetFadeOut()
     {
-        yield return new WaitForSeconds(0.1f);
-        jetAudioSource.Play();
+        WaitForSeconds wait = new WaitForSeconds(fadeControlRate);
+
+        while (jetAudioSource.volume > 0f)
+        {
+            jetAudioSource.volume = Mathf.Max(jetAudioSource.volume - 0.05f, 0f);
+            jetAudioSource.pitch = Mathf.Max(jetAudioSource.pitch - 0.025f, 0.5f);
+            yield return wait;
+        }
+
+        jetAudioSource.volume = 0f;
+        jetAudioSource.pitch = 0.5f;
+
+        jetAudioSource.Stop();
     }
 }

@@ -12,6 +12,9 @@ public class BounceBoard : MonoBehaviour
     private Color curColor;
 
     public float timeCounting = 0;
+    public float scoreType = 10;
+    public GameObject scorePop;
+    public GameObject popEffect;
     [SerializeField]
     private float duration = 1;
     private float intensity = 5f;
@@ -44,7 +47,10 @@ public class BounceBoard : MonoBehaviour
     }
     void OnCollisionEnter(Collision collisionInfo)
     {
-        scoreManager.score++;
+        scoreManager.score =+ scoreType;
+        scorePop.GetComponent<Animator>().SetTrigger("Pop");
+        GameObject bumperEffect = GameObject.Instantiate(popEffect, transform.position + new Vector3(0, 3, 0), Quaternion.identity);
+        Destroy(bumperEffect, 1);
         sfxManager.PlayBumperSound();
         timeCounting = Time.time;
         curColor = originalColor * intensity;
