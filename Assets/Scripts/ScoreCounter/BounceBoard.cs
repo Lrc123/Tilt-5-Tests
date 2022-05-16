@@ -13,12 +13,12 @@ public class BounceBoard : MonoBehaviour
 
     public float timeCounting = 0;
     public float scoreType = 5;
-    public GameObject scorePop;
-    public GameObject popEffect;
+    public GameObject imageScorePop;
+    public GameObject popParticleEffect;
     [SerializeField]
     private float duration = 1;
     private float intensity = 5f;
-    private GameObject tmpScorePop;
+    private GameObject ScorePopT;
 
     // Start is called before the first frame update
     void Start()
@@ -28,8 +28,7 @@ public class BounceBoard : MonoBehaviour
         emissiveMaterial = glowRenderer.GetComponent<Renderer>().material;
         emissiveMaterial.EnableKeyword("_EMISSION");
         curColor = originalColor = emissiveMaterial.color;
-        //scorePop = GameObject.FindGameObjectWithTag("Score Pop");
-        tmpScorePop = Instantiate(scorePop, transform.position + new Vector3(0, 3, 0), Quaternion.identity);
+        ScorePopT = Instantiate(imageScorePop, transform.position + new Vector3(0, 3, 0), Quaternion.identity);// new Quaternion(53, 0, 0, 0));
         scoreManager = FindObjectOfType<ScoreManager>();
     }
 
@@ -55,9 +54,8 @@ public class BounceBoard : MonoBehaviour
         timeCounting = Time.time;
         curColor = originalColor * intensity;
         emissiveMaterial.SetColor("_EmissionColor", curColor);
-        tmpScorePop.transform.GetChild(0).GetChild(0).GetComponent<Animator>().SetTrigger("Pop");
-        //scorePop.GetComponent<Animator>().SetTrigger("Pop");
-        GameObject bumperEffect = GameObject.Instantiate(popEffect, transform.position + new Vector3(0, 3, 0), Quaternion.identity);
+        ScorePopT.transform.GetChild(0).GetChild(0).GetComponent<Animator>().SetTrigger("Pop");
+        GameObject bumperEffect = GameObject.Instantiate(popParticleEffect, transform.position + new Vector3(0, 3, 0), Quaternion.identity);
 
         Destroy(bumperEffect, 1);
     }

@@ -115,6 +115,6 @@ MonoBehaviour:
   emissiveMaterial: {fileID: 0}
   timeCounting: 0
   scoreType: 5
-  scorePop: {fileID: 2781891799918360654, guid: 3c59ea34b4ee35e43aa904745ab2c7a8, type: 3}
-  popEffect: {fileID: 1263830474501779514, guid: 38a30f8e29040bc4b8a06766082d2c83, type: 3}
+  imageScorePop: {fileID: 2781891799918360654, guid: 3c59ea34b4ee35e43aa904745ab2c7a8, type: 3}
+  popParticleEffect: {fileID: 1263830474501779514, guid: 38a30f8e29040bc4b8a06766082d2c83, type: 3}
   duration: 1

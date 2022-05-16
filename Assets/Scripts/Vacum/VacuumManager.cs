@@ -9,6 +9,7 @@ public class VacuumManager : MonoBehaviour
     public Image energyBar;
     public float energyBarFillAmount = 0f;
     public GameObject WindForceObj;
+    public Animator energyEmpty;
     public float coolDownDuration = 1.5f;
 
     private SfxManager sfxManager;
@@ -64,6 +65,7 @@ public class VacuumManager : MonoBehaviour
 
         IEnumerator CoolDown(float duration)
         {
+            energyEmpty.SetTrigger("Flashing");
             yield return new WaitForSeconds(duration);
             WindForce windLauncher = WindForceObj.GetComponent<WindForce>();
             windLauncher.isCoolDown = false;
