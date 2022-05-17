@@ -9,11 +9,12 @@ public class JumpPad : MonoBehaviour
     public float resetTime = 0.3f;
     public float forceAmount = 2f;
 
-    bool isLaunching = false;
+    private bool isLaunching = false;
 
     private Vector3 startPos;
     private Quaternion startRot;
     private Rigidbody rb;
+    private Vector3 forcePos;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +31,12 @@ public class JumpPad : MonoBehaviour
         {
             TryLaunch();
         }
+
+        // For testing without Tilt5 wand
+        if (UnityEngine.Input.GetKeyDown(KeyCode.Space)) 
+        {
+            TryLaunch();
+        }
     }
 
     private void TryLaunch()
@@ -43,32 +50,26 @@ public class JumpPad : MonoBehaviour
 
     private IEnumerator Launch()
     {
-        //float t = 0f;
-        //float amount = 2f / launchTime;
-        //while (t < launchTime)
-        //{
-        //    transform.Translate(transform.up * Time.deltaTime * amount);
-        //    yield return null;
-        //    t += Time.deltaTime;
-        //}
-
-        rb.AddForce(transform.up * forceAmount, ForceMode.Impulse);
+        rb.isKinematic = false;
+        rb.angularVelocity = Vector3.right * forceAmount;
 
         yield return new WaitForSeconds(launchTime);
         rb.velocity = Vector3.zero;
-        transform.rotation = startRot;
+        rb.angularVelocity = Vector3.zero;
+        rb.isKinematic = true;
 
         float t = 0f;
-        float amount = 2f / resetTime;
+        float amount = 70f / resetTime;
         while (t < resetTime)
         {
-            transform.Translate(-transform.up * Time.deltaTime * amount);
+            transform.Rotate(-transform.right * Time.deltaTime * amount);
             yield return null;
 
             t += Time.deltaTime;
         }
 
         transform.position = startPos;
+        transform.rotation = startRot;
         isLaunching = false;
     }
 }

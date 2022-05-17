@@ -16,7 +16,7 @@ public class SceneReset : MonoBehaviour
     void Update()
     {
         if (TiltFive.Input.GetButtonDown(TiltFive.Input.WandButton.B)){
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }

@@ -77,7 +77,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64abb8d1ea3e47940872b8fb7bfa842f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  standardBall: {fileID: 3397489547204606152, guid: 15b8529b5cf6872479667d68e3da8d63, type: 3}
+  standardBall: {fileID: 3985461160335102258, guid: e7ae21c8d19fb7845880d73a06aad3fc, type: 3}
 --- !u!1 &7169557107889470951
 GameObject:
   m_ObjectHideFlags: 0
@@ -213,5 +213,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0da872bdaaa51364da495ac4f1287ff6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxBalls: 10
-  spawnRate: 2
+  maxBalls: 5
+  spawnRate: 5

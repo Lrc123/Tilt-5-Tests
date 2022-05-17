@@ -21,14 +21,15 @@ public class BallManager : MonoBehaviour
 
     private IEnumerator SpawnBalls()
     {
-        while (this.enabled)
+        while (true)
         {
-            yield return new WaitForSeconds(spawnRate);
-
             if (ballCount < maxBalls)
             {
                 ballSpawner.SpawnBall();
+                ++ballCount;
             }
+
+            yield return new WaitForSeconds(spawnRate);
         }
     }
 

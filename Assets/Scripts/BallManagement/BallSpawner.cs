@@ -7,6 +7,8 @@ public class BallSpawner : MonoBehaviour
     [SerializeField]
     private GameObject standardBall;
 
+    public float spawnForce = 3f;
+
     Transform[] spawnTransforms;
 
     private void Start()
@@ -23,6 +25,7 @@ public class BallSpawner : MonoBehaviour
     public void SpawnBall()
     {
         int i = Random.Range(0, spawnTransforms.Length);
-        Instantiate(standardBall, spawnTransforms[i].position, Quaternion.identity, transform);
+        GameObject newBall = Instantiate(standardBall, spawnTransforms[i].position, Quaternion.identity, transform);
+        newBall.GetComponent<Rigidbody>().AddForce(Vector3.back * spawnForce, ForceMode.Impulse);
     }
 }
