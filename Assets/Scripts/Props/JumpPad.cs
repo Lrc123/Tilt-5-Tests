@@ -8,6 +8,7 @@ public class JumpPad : MonoBehaviour
     public float launchTime = 0.2f;
     public float resetTime = 0.3f;
     public float forceAmount = 2f;
+    public float bounceForce = 10f;
 
     private bool isLaunching = false;
 
@@ -22,6 +23,17 @@ public class JumpPad : MonoBehaviour
         startPos = transform.position;
         startRot = transform.rotation;
         rb = GetComponent<Rigidbody>();
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.tag == "WindAffectable" && isLaunching)
+        {
+            Rigidbody ballRb = collision.collider.GetComponent<Rigidbody>();
+            ballRb.velocity = Vector3.zero;
+            ballRb.angularVelocity = Vector3.zero;
+            ballRb.AddForce(Vector3.forward * bounceForce, ForceMode.Impulse);
+        }
     }
 
     // Update is called once per frame

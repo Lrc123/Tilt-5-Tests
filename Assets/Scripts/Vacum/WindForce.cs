@@ -33,6 +33,8 @@ public class WindForce : MonoBehaviour
 
     private SfxManager sfxManager;
 
+    Vector3 vacumAng;
+
     void Start()
     {
         line = GetComponent<LineRenderer>();
@@ -62,7 +64,9 @@ public class WindForce : MonoBehaviour
 
     void InputHandle()
     {
+        vacumAng = transform.rotation.eulerAngles;
         Vector3 vacumDir = transform.TransformDirection(Vector3.down);
+
         if (!isCoolDown)
         {
             accelerator = TiltFive.Input.GetTrigger(ControllerIndex.Primary);
@@ -108,6 +112,7 @@ public class WindForce : MonoBehaviour
         {
             var distance = (other.transform.position - transform.parent.position).magnitude;
             //Physics.gravity = Vector3.down * 5;
+
             actualForce = forceDir * windForce;
             if (distance > 1 && distance <= maxDistance)
             {

@@ -78,6 +78,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   standardBall: {fileID: 3985461160335102258, guid: e7ae21c8d19fb7845880d73a06aad3fc, type: 3}
+  spawnForce: 3
 --- !u!1 &7169557107889470951
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,4 +215,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxBalls: 5
-  spawnRate: 5
+  spawnRate: 2

@@ -35,8 +35,9 @@ public class BounceBoard : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      
-        if((Time.time - timeCounting) >= duration)
+        ScorePopT.transform.position = transform.position + new Vector3(0, 3, 0);
+
+        if ((Time.time - timeCounting) >= duration)
         {
             Debug.Log(Time.time - timeCounting);
             if (emissiveMaterial.GetColor("_EmissionColor") != originalColor)
@@ -49,14 +50,18 @@ public class BounceBoard : MonoBehaviour
     }
     void OnCollisionEnter(Collision collisionInfo)
     {
-        scoreManager.score += scoreType;
-        sfxManager.PlayBumperSound();
-        timeCounting = Time.time;
-        curColor = originalColor * intensity;
-        emissiveMaterial.SetColor("_EmissionColor", curColor);
-        ScorePopT.transform.GetChild(0).GetChild(0).GetComponent<Animator>().SetTrigger("Pop");
-        GameObject bumperEffect = GameObject.Instantiate(popParticleEffect, transform.position + new Vector3(0, 3, 0), Quaternion.identity);
+        if (collisionInfo.collider.tag == "WindAffectable")
+        {
+            scoreManager.score += scoreType;
+            sfxManager.PlayBumperSound();
+            timeCounting = Time.time;
+            curColor = originalColor * intensity;
+            emissiveMaterial.SetColor("_EmissionColor", curColor);
+            ScorePopT.transform.GetChild(0).GetChild(0).GetComponent<Animator>().SetTrigger("Pop");
+            GameObject bumperEffect = GameObject.Instantiate(popParticleEffect, transform.position + new Vector3(0, 3, 0), Quaternion.identity);
 
-        Destroy(bumperEffect, 1);
+            Destroy(bumperEffect, 1);
+        }
+        
     }
 }

@@ -10,12 +10,10 @@ public class BallManager : MonoBehaviour
     private int ballCount = 0;
 
     private BallSpawner ballSpawner;
-    private BallExit ballExit;
 
     private void Start()
     {
         ballSpawner = GetComponentInChildren<BallSpawner>();
-        ballExit = GetComponentInChildren<BallExit>();
         StartCoroutine(SpawnBalls());
     }
 

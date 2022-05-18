@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3985461160335102268}
   - component: {fileID: 3985461160335102259}
   - component: {fileID: 6658345183254009184}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SmallBall
   m_TagString: WindAffectable
   m_Icon: {fileID: 0}

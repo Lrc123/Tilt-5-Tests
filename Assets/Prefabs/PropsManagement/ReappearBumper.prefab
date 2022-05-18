@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -7237669824313911150}
   - component: {fileID: 6340026869295468946}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: ReappearBumper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b1b99a300da6d034aa0a0c1f4167e321, type: 2}
+  - {fileID: -4288583467269203127, guid: a5f458252f7e76b4ba4517f6ca149891, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -128,6 +128,6 @@ MonoBehaviour:
   emissiveMaterial: {fileID: 0}
   timeCounting: 0
   scoreType: 5
-  scorePop: {fileID: 1843317772816079486, guid: 756dada21b1722143a5df291a29c2e0d, type: 3}
-  popEffect: {fileID: 1263830474501779514, guid: 38a30f8e29040bc4b8a06766082d2c83, type: 3}
+  imageScorePop: {fileID: 2781891799918360654, guid: 69c96e5f5d1560d4cbf08123b619e40c, type: 3}
+  popParticleEffect: {fileID: 1263830474501779514, guid: b2a5c31f4a0e5fd4d84f56a87335f547, type: 3}
   duration: 1
