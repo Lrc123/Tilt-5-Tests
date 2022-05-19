@@ -10,6 +10,8 @@ public class JumpPad : MonoBehaviour
     public float forceAmount = 2f;
     public float bounceForce = 10f;
 
+    public float angle;
+
     private bool isLaunching = false;
 
     private Vector3 startPos;
