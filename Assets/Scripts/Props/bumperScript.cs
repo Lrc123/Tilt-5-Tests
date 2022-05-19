@@ -5,7 +5,8 @@ using UnityEngine;
 public class bumperScript : MonoBehaviour
 {
     private Vector3 originalPos;
-    // Start is called before the first frame update
+    public bool isDisappered = false;
+    
     void Start()
     {
         originalPos = transform.position;
@@ -22,22 +23,26 @@ public class bumperScript : MonoBehaviour
         if (collision.gameObject.tag == "WindAffectable")
         {
             //gameObject.SetActive (false);
-            
-            StartCoroutine(Disappear(0.5f));
+
+            Disappear(0.1f);
         }
     }
 
-    IEnumerator Disappear(float num)
+    void Disappear(float num)
     {
-        yield return new WaitForSeconds(num);
+        isDisappered = true;
         transform.position = new Vector3(transform.position.x, transform.position.y - 10, transform.position.z);
-        StartCoroutine(GoBack(3));
+    }
+
+    public void Reappear()
+    {
+        GoBack(0.1f);
     }
 
 
-    IEnumerator GoBack(float interval)
+    void GoBack(float interval)
     {
-        yield return new WaitForSeconds(interval);
+        isDisappered = false;
         transform.position = originalPos;
     }
 }

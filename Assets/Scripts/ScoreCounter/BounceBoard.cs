@@ -39,7 +39,7 @@ public class BounceBoard : MonoBehaviour
 
         if ((Time.time - timeCounting) >= duration)
         {
-            Debug.Log(Time.time - timeCounting);
+            //Debug.Log(Time.time - timeCounting);
             if (emissiveMaterial.GetColor("_EmissionColor") != originalColor)
             {
                 emissiveMaterial.SetColor("_EmissionColor", originalColor);

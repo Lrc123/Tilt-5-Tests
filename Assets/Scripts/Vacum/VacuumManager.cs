@@ -13,6 +13,7 @@ public class VacuumManager : MonoBehaviour
     public float coolDownDuration = 1.5f;
 
     private SfxManager sfxManager;
+
     
     void Start()
     {
@@ -24,10 +25,10 @@ public class VacuumManager : MonoBehaviour
 
     void Update()
     {
-        HandleHeathBar();
+        HandleEnergyBar();
     }
 
-    private void HandleHeathBar()
+    private void HandleEnergyBar()
     {
         energyBar.fillAmount = energyBarFillAmount;
 

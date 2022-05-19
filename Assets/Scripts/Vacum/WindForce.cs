@@ -70,7 +70,7 @@ public class WindForce : MonoBehaviour
         if (!isCoolDown)
         {
             accelerator = TiltFive.Input.GetTrigger(ControllerIndex.Primary);
-            Debug.Log("accelerator" + accelerator + "time: " + Time.time);
+            //Debug.Log("accelerator" + accelerator + "time: " + Time.time);
         }
         else
         {
