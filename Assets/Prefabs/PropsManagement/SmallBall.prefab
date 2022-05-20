@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 3985461160335102268}
   - component: {fileID: 3985461160335102259}
   - component: {fileID: 6658345183254009184}
-  m_Layer: 8
+  - component: {fileID: 5321014473804861380}
+  m_Layer: 0
   m_Name: SmallBall
   m_TagString: WindAffectable
   m_Icon: {fileID: 0}
@@ -223,3 +224,16 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!114 &5321014473804861380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3985461160335102258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6edd499c78ed0994c97929d3363dd363, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mask: {fileID: 2650599656685000743, guid: 68d3d96e2bc29c44bb5fd46a29711a1b, type: 3}

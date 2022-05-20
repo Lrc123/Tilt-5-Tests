@@ -8,9 +8,9 @@ Shader "Always on Top" {
 
         CGINCLUDE
 
-#include "UnityCG.cginc"
+	#include "UnityCG.cginc"
 
-            sampler2D _MainTex;
+        sampler2D _MainTex;
         fixed4 _MainColor;
 
         half4 _MainTex_ST;
@@ -56,7 +56,7 @@ Shader "Always on Top" {
 
                     ENDCG
 
-            }
+                }
 
         }
         FallBack Off
