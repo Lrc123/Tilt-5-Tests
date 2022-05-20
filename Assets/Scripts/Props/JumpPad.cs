@@ -5,42 +5,46 @@ using TiltFive;
 
 public class JumpPad : MonoBehaviour
 {
-    public float launchTime = 0.2f;
-    public float resetTime = 0.3f;
-    public float forceAmount = 2f;
     public float bounceForce = 10f;
-
-    public float angle;
+    public Transform target;
+    public float angle = 0f;
+    public bool useTarget = false;
 
     private bool isLaunching = false;
+    private float launchTime = 0.2f;
+    private float resetTime = 0.2f;
+    private float forceAmount = 12f;
 
     private Vector3 startPos;
     private Quaternion startRot;
     private Rigidbody rb;
-    private Vector3 forcePos;
+    private BoxCollider coll;
 
-    // Start is called before the first frame update
     void Start()
     {
         startPos = transform.position;
         startRot = transform.rotation;
         rb = GetComponent<Rigidbody>();
-
-
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.tag == "WindAffectable" && isLaunching)
         {
+            Vector3 direction = Quaternion.AngleAxis(angle, transform.right) * transform.forward;
+            if (useTarget && (target != null))
+            {
+                direction = (target.position - collision.transform.position).normalized;
+            }
+
             Rigidbody ballRb = collision.collider.GetComponent<Rigidbody>();
             ballRb.velocity = Vector3.zero;
             ballRb.angularVelocity = Vector3.zero;
-            ballRb.AddForce(transform.forward * bounceForce, ForceMode.Impulse);
+
+            ballRb.AddForce(direction * bounceForce, ForceMode.Impulse);
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (TiltFive.Input.GetButtonDown(TiltFive.Input.WandButton.One))
@@ -67,7 +71,8 @@ public class JumpPad : MonoBehaviour
     private IEnumerator Launch()
     {
         rb.isKinematic = false;
-        rb.angularVelocity = Vector3.right * forceAmount;
+        rb.angularVelocity = transform.right * forceAmount;
+        Debug.Log("transform right vector: " + transform.right);
 
         yield return new WaitForSeconds(launchTime);
         rb.velocity = Vector3.zero;
@@ -78,7 +83,7 @@ public class JumpPad : MonoBehaviour
         float amount = 70f / resetTime;
         while (t < resetTime)
         {
-            transform.Rotate(-transform.right * Time.deltaTime * amount);
+            transform.Rotate(transform.right * Time.deltaTime * amount);
             yield return null;
 
             t += Time.deltaTime;

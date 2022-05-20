@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6799f074881f81489bdce1f0884af3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  launchTime: 0.2
-  resetTime: 0.2
-  forceAmount: 12
   bounceForce: 20
+  target: {fileID: 0}
+  angle: 60
+  useTarget: 0
