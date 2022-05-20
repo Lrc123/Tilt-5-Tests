@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/OldScenes/LevelSmallBall.unity
-    guid: da6c27164f5b92f4e869ac9c9264b756
+    path: Assets/Scenes/Levels/DraftLevels/Draft_2.unity
+    guid: 4175d6834756f4649a5a20cbfa37a633
   m_configObjects: {}

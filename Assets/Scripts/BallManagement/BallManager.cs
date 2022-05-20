@@ -21,6 +21,10 @@ public class BallManager : MonoBehaviour
     {
         while (true)
         {
+            if (ballSpawner == null)
+            {
+                ballSpawner = GetComponentInChildren<BallSpawner>();
+            }
             if (ballCount < maxBalls)
             {
                 ballSpawner.SpawnBall();

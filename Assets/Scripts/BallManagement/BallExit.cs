@@ -13,6 +13,10 @@ public class BallExit : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (ballManager == null)
+        {
+            ballManager = GetComponentInParent<BallManager>();
+        }
         if (other.tag == "WindAffectable")
         {
             // Decrement ball count in BallManager

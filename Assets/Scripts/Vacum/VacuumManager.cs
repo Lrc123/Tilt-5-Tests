@@ -25,6 +25,14 @@ public class VacuumManager : MonoBehaviour
 
     void Update()
     {
+        if (transform.localPosition.y < 8f)
+        {
+            Debug.Log("vacuum pos");
+            Vector3 newPos = transform.localPosition;
+            newPos.y = 8f;
+            transform.localPosition = newPos;
+        }
+
         HandleEnergyBar();
     }
 

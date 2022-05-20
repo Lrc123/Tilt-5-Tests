@@ -58,6 +58,7 @@ public class GameManager : MonoBehaviour
         if (isPlayed)
         {
             return;
+
         }
         if (timeNum == 0)
         {
