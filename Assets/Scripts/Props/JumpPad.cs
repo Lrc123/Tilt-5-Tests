@@ -25,6 +25,8 @@ public class JumpPad : MonoBehaviour
         startPos = transform.position;
         startRot = transform.rotation;
         rb = GetComponent<Rigidbody>();
+
+
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -34,7 +36,7 @@ public class JumpPad : MonoBehaviour
             Rigidbody ballRb = collision.collider.GetComponent<Rigidbody>();
             ballRb.velocity = Vector3.zero;
             ballRb.angularVelocity = Vector3.zero;
-            ballRb.AddForce(Vector3.forward * bounceForce, ForceMode.Impulse);
+            ballRb.AddForce(transform.forward * bounceForce, ForceMode.Impulse);
         }
     }
 
