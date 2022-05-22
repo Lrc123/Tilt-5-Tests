@@ -20,7 +20,7 @@ public class Vortex : MonoBehaviour
         transform.Rotate(v3Current);
         */
         //transform.Rotate(0, 0, 50 * Time.deltaTime);
-       // transform.Rotate(Vector3.forward * 50 * Time.deltaTime, Space.Self);
+        //transform.Rotate(Vector3.forward * 50 * Time.deltaTime, Space.Self);
     }
 
     private void OnTriggerStay(Collider other)
