@@ -79,7 +79,7 @@ public class GameManager : MonoBehaviour
             camIndex--;
             camIndex %= camPositions.Count;
         }
-        gameBoard.position = Vector3.MoveTowards(gameBoard.position, camPositions[camIndex].transform.position, 1.2f);
+        //gameBoard.position = Vector3.MoveTowards(gameBoard.position, camPositions[camIndex].transform.position, 1.2f);
     }
 
 

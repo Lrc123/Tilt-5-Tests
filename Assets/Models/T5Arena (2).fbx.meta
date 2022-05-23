@@ -3,7 +3,17 @@ guid: 169d814006bf31541a2d57bc29244d6d
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal Panel 05
+    second: {fileID: 2100000, guid: 6c3fd146841324444889ba828cff6d1b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metallic
+    second: {fileID: 2100000, guid: 2abebd5b9d5a6514caa1e720ecd94275, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

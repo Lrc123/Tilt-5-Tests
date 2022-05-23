@@ -6,7 +6,6 @@ public class PressureBoard : MonoBehaviour
 {
 
     public List<GameObject> currentCollisions;
-    public GameObject gate;
 
     public Transform start;
 
@@ -14,36 +13,40 @@ public class PressureBoard : MonoBehaviour
 
     private Transform target;
 
+    private bool isShow = false;
+
+    public Animator monsterShow;
+
     public int num = 0;
+
+    public float startTime;
 
     void Start()
     {
+        start = transform;
         target = transform;
+        startTime = Time.time;
         currentCollisions = new List<GameObject>();
-
-    }
-
-    void OpenGate()
-    {
-        target = end;
-    }
-
-    void CloseGate()
-    {
-        target = start;
     }
 
     void Update()
     {
-        if ((num = CountBalls()) >= 3)
+        target = end;
+        //currentCollisions[i].transform.position = Vector3.MoveTowards(currentCollisions[i].transform.position, target.position, 0.1f);
+        if ((Time.time - startTime) > 2)
         {
-            OpenGate();
+            if (currentCollisions.Count > 0)
+            {
+                if (!isShow)
+                {
+                    monsterShow.SetTrigger("MonsterShow");
+                    isShow = true;
+                }
+                currentCollisions[0].GetComponent<BallLimitation>().heightLimitation = 20f;
+                currentCollisions[0].transform.position = target.position;
+                startTime = Time.time;
+            }
         }
-        else
-        {
-            CloseGate();
-        }
-        gate.transform.position = Vector3.MoveTowards(gate.transform.position, target.position, 0.1f);
     }
 
     private int CountBalls()
@@ -51,7 +54,7 @@ public class PressureBoard : MonoBehaviour
         int count = 0;
         for (int i = 0; i < currentCollisions.Count; i++)
         {
-            if (currentCollisions[i].tag.Equals("WindAffectable"))
+            if (currentCollisions[i].tag.Equals("Ball"))
             {
                 count++;
             }
@@ -59,14 +62,17 @@ public class PressureBoard : MonoBehaviour
         return count;
     }
 
-
-    void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        currentCollisions.Add(collision.gameObject);
+        if (other.tag.Equals("Ball"))
+        {
+            currentCollisions.Add(other.gameObject);
+        }
     }
 
-    void OnCollisionExit(Collision collision)
+    private void OnTriggerExit(Collider other)
     {
-        currentCollisions.Remove(collision.gameObject);
+        currentCollisions.Remove(other.gameObject);
     }
+
 }

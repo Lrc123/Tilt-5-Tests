@@ -23,9 +23,26 @@ public class Vortex : MonoBehaviour
         //transform.Rotate(Vector3.forward * 50 * Time.deltaTime, Space.Self);
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        
+        if (other.tag.Equals("Leaf") || other.tag.Equals("Ball"))
+        {
+            var tmp = other.GetComponent<Rigidbody>();
+            if (tmp != null)
+            {
+                tmp.velocity = Vector3.zero;
+                tmp.drag = 10;
+            }
+        }
+    }
+
     private void OnTriggerStay(Collider other)
     {
-        Vector3 dir = transform.position - other.transform.position;
-        other.transform.GetComponent<Rigidbody>().AddForce( force * dir, ForceMode.Acceleration);
+        if (other.tag.Equals("Leaf") || other.tag.Equals("Ball"))
+        {
+            Vector3 dir = transform.position - other.transform.position;
+            other.transform.GetComponent<Rigidbody>().AddForce(force * dir, ForceMode.Acceleration);
+        }
     }
 }

@@ -15,9 +15,10 @@ GameObject:
   - component: {fileID: 3985461160335102259}
   - component: {fileID: 6658345183254009184}
   - component: {fileID: 5321014473804861380}
+  - component: {fileID: -6995317886077772266}
   m_Layer: 0
   m_Name: SmallBall
-  m_TagString: WindAffectable
+  m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 3985461160335102258}
   m_LocalRotation: {x: -0.06908745, y: -0, z: -0, w: 0.9976106}
   m_LocalPosition: {x: -2.67, y: 2.9254684, z: 4.678217}
-  m_LocalScale: {x: 0.65, y: 0.65, z: 0.65}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -237,3 +238,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mask: {fileID: 2650599656685000743, guid: 68d3d96e2bc29c44bb5fd46a29711a1b, type: 3}
+--- !u!114 &-6995317886077772266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3985461160335102258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 844762b067ebef64c9051754cbc273f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

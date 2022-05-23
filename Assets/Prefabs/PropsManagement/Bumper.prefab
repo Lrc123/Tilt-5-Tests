@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 1172004910072957192}
   - component: {fileID: 94060589003463545}
   - component: {fileID: 7882338864448820113}
-  - component: {fileID: 2845918589381286518}
   - component: {fileID: 5653902771850784695}
+  - component: {fileID: 1354893319315323676}
   m_Layer: 6
   m_Name: Bumper
   m_TagString: Untagged
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 8673487145490004923}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2, y: -0.029000044, z: 0}
-  m_LocalScale: {x: 0.6321461, y: 0.6030534, z: 0.6321461}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -42,7 +42,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8673487145490004923}
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 7401931466622187740, guid: 169d814006bf31541a2d57bc29244d6d, type: 3}
 --- !u!23 &7882338864448820113
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6a9997e5efbab18439b6c31080379f87, type: 2}
+  - {fileID: 2100000, guid: 0ecbe7d31a24d26459c2b04ed76a781b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -85,20 +85,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &2845918589381286518
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8673487145490004923}
-  m_Material: {fileID: 13400000, guid: d46710ae8f0991b4daa4a587cdc2646a, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!114 &5653902771850784695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,6 +101,20 @@ MonoBehaviour:
   emissiveMaterial: {fileID: 0}
   timeCounting: 0
   scoreType: 10
-  imageScorePop: {fileID: 1843317772816079486, guid: 756dada21b1722143a5df291a29c2e0d, type: 3}
+  imageScorePop: {fileID: 2781891799918360654, guid: 96f3b841075c0ac47ac0346079179871, type: 3}
   popParticleEffect: {fileID: 1263830474501779514, guid: 38a30f8e29040bc4b8a06766082d2c83, type: 3}
   duration: 1
+--- !u!64 &1354893319315323676
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8673487145490004923}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7401931466622187740, guid: 169d814006bf31541a2d57bc29244d6d, type: 3}

@@ -11,7 +11,7 @@ public class ComboBumper : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.tag == "WindAffectable")
+        if (collision.collider.tag == "Ball")
         {
             int randomNext = Random.Range(0, next.Length);
             Vector3 nextPos = next[randomNext].position;

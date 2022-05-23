@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 7932700574110880963}
   - component: {fileID: 7932700574110880962}
   - component: {fileID: 7932700574110880961}
-  - component: {fileID: 6728605926718263441}
   - component: {fileID: -3533431774169113870}
   - component: {fileID: 7397959928499601860}
+  - component: {fileID: 8261743776321826222}
   m_Layer: 0
   m_Name: CornerBumper
   m_TagString: Untagged
@@ -43,7 +43,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7932700574110880991}
-  m_Mesh: {fileID: 1488517429484795320, guid: 0b0dd5bb44ba4214891a9cb335877845, type: 3}
+  m_Mesh: {fileID: 1488517429484795320, guid: 5bd9a0b7d8ce87d4db5ebe836b2cf3a1, type: 3}
 --- !u!23 &7932700574110880961
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4913e35ac43222249ae71634f3594b4d, type: 2}
+  - {fileID: 2100000, guid: 537a545431880f241b6d807dca098b4e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -86,19 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6728605926718263441
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7932700574110880991}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.19999999, y: 0.099999994, z: 0.06308899}
-  m_Center: {x: -0.00000001470612, y: 0, z: -0.0065444913}
 --- !u!114 &-3533431774169113870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,6 +115,20 @@ MonoBehaviour:
   emissiveMaterial: {fileID: 0}
   timeCounting: 0
   scoreType: 5
-  imageScorePop: {fileID: 1843317772816079486, guid: 66344c9660a2fc54c8de884dcd2f3f6d, type: 3}
+  imageScorePop: {fileID: 2781891799918360654, guid: 69c96e5f5d1560d4cbf08123b619e40c, type: 3}
   popParticleEffect: {fileID: 1263830474501779514, guid: b2a5c31f4a0e5fd4d84f56a87335f547, type: 3}
   duration: 1
+--- !u!64 &8261743776321826222
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7932700574110880991}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1488517429484795320, guid: 5bd9a0b7d8ce87d4db5ebe836b2cf3a1, type: 3}

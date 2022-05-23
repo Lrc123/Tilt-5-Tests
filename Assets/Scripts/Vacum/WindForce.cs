@@ -108,7 +108,7 @@ public class WindForce : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.tag == "WindAffectable")
+        if (other.tag.Equals("Ball") || other.tag.Equals("Leaf"))
         {
             var distance = (other.transform.position - transform.parent.position).magnitude;
             //Physics.gravity = Vector3.down * 5;

@@ -50,7 +50,7 @@ public class BounceBoard : MonoBehaviour
     }
     void OnCollisionEnter(Collision collisionInfo)
     {
-        if (collisionInfo.collider.tag == "WindAffectable")
+        if (collisionInfo.collider.tag == "Ball")
         {
             scoreManager.score += scoreType;
             sfxManager.PlayBumperSound();
