@@ -253,6 +253,11 @@ MonoBehaviour:
   wandAim: {fileID: 816694391}
   gameBoard: {fileID: 2116321749}
   forceMult: 0.5
+--- !u!1 &219379077 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7483436292649545910, guid: 9cdaf98efe7c69adca90cde48da559cc, type: 3}
+  m_PrefabInstance: {fileID: 743248237}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &299840870 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5096850156648964934, guid: 9cdaf98efe7c69adca90cde48da559cc, type: 3}
@@ -793,6 +798,18 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6132178175923897642, guid: 9cdaf98efe7c69adca90cde48da559cc, type: 3}
   m_PrefabInstance: {fileID: 743248237}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1553754428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 219379077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6167fd5a576531b44a01f1d1a6b49fd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1598096398
 GameObject:
   m_ObjectHideFlags: 0

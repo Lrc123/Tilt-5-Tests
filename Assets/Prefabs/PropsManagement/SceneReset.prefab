@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 512807825962201722}
-  - component: {fileID: 512807825962201723}
+  - component: {fileID: 5691820807260886952}
   m_Layer: 0
   m_Name: SceneReset
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &512807825962201723
+--- !u!114 &5691820807260886952
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,6 +41,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 512807825962201720}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef94ac4811d0ba14fa63bc4f256e787e, type: 3}
+  m_Script: {fileID: 11500000, guid: cd071bd1ff28d4346940563fb0ae8c88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

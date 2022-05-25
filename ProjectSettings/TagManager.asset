@@ -9,6 +9,7 @@ TagManager:
   - Particle
   - Ball
   - Leaf
+  - Ground
   layers:
   - Default
   - TransparentFX

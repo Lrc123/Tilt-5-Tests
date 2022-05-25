@@ -13,6 +13,8 @@ public class WindForce : MonoBehaviour
 
     public float windForce;
 
+    public float updraftForce = 0.04f;
+
     public float maxDistance = 10f;
 
     public LineRenderer line;
@@ -122,7 +124,16 @@ public class WindForce : MonoBehaviour
             {
                 actualForce *= 0;
             }
-            other.GetComponent<Rigidbody>().AddForce(actualForce, ForceMode.Impulse);
+
+                Rigidbody rb = other.GetComponent<Rigidbody>();
+                rb.AddForce(actualForce, ForceMode.Impulse);
+
+                Vector3 updraftDir = Vector3.up * accelerator * updraftForce;
+                updraftDir = Quaternion.AngleAxis(Random.Range(-20f, 20f), Vector3.forward) * updraftDir;
+                updraftDir = Quaternion.AngleAxis(Random.Range(-20f, 20f), Vector3.right) * updraftDir;
+                rb.AddForce(updraftDir, ForceMode.Impulse);
+
+                other.GetComponent<LeafBounce>().isBlown = true;
         }
     }
 

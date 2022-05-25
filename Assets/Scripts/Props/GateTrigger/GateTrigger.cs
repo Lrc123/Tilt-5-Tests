@@ -8,10 +8,11 @@ public class GateTrigger : MonoBehaviour
     [SerializeField]
     List<Transform> itemList;
 
+    public GameObject target;
 
-    public GameObject entryObj;
+    public float openRotation;
 
-    public GameObject exitObj;
+    public float closeRotation;
 
     void Start()
     {
@@ -50,8 +51,12 @@ public class GateTrigger : MonoBehaviour
     {
         if (CheckCompleted())
         {
-            exitObj.GetComponent<Animator>().SetBool("Open", true);
             Debug.Log("Open The Door!");
+            float deltaAngle = (target.transform.eulerAngles - new Vector3(0, openRotation, 0)).magnitude;
+            if (deltaAngle > 10f && deltaAngle < 350f)
+            {
+                target.transform.eulerAngles = Vector3.Lerp(target.transform.eulerAngles, new Vector3(0, openRotation, 0), 0.01f);
+            }
             if (!reapeared)
             {
                 StartCoroutine(ReapperAll());
@@ -59,7 +64,11 @@ public class GateTrigger : MonoBehaviour
         }
         else
         {
-            exitObj.GetComponent<Animator>().SetBool("Open", false);
+            float deltaAngle = (target.transform.eulerAngles - new Vector3(0, closeRotation, 0)).magnitude;
+            if (deltaAngle > 10f && deltaAngle < 350f)
+            {
+                target.transform.eulerAngles = Vector3.Lerp(target.transform.eulerAngles, new Vector3(0, closeRotation, 0), 0.01f);
+            }
             Debug.Log("Close The Door!");
         }
     }

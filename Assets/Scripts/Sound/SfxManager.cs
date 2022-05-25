@@ -15,6 +15,9 @@ public class SfxManager : MonoBehaviour
 
     public float jetFadeTime = 0.2f;
     public float fadeControlRate = 0.01f;
+    public float startPitch = 0.5f;
+    public float targetPitch = 1f;
+    public float targetVolume = 1f;
 
     private AudioSource audioSource;
     public AudioSource jetAudioSource;
@@ -29,8 +32,6 @@ public class SfxManager : MonoBehaviour
 
     public void PlayBumperSound()
     {
-        Debug.Log("Bumper Sound");
-
         int bellIndex = Random.Range(0, bellSounds.Length);
         int flipperIndex = Random.Range(0, flipperSounds.Length);
         int scoreIndex = Random.Range(0, scoreSounds.Length);
@@ -64,43 +65,38 @@ public class SfxManager : MonoBehaviour
 
     private IEnumerator JetFadeIn()
     {
-        Debug.Log("Jet Fade In");
-
         if (!jetAudioSource.isPlaying)
         {
             jetAudioSource.volume = 0f;
-            jetAudioSource.pitch = 0.5f;
-            jetAudioFilter.cutoffFrequency = 15000f;
+            jetAudioSource.pitch = startPitch;
             jetAudioSource.Play();
         }
 
         WaitForSeconds wait = new WaitForSeconds(fadeControlRate);
-
         float increment = fadeControlRate / jetFadeTime;
 
-        while (jetAudioSource.volume < 1f)
+        while (jetAudioSource.volume < targetVolume)
         {
-            jetAudioSource.volume = Mathf.Min(jetAudioSource.volume + 0.05f, 1f);
-            jetAudioSource.pitch = Mathf.Min(jetAudioSource.pitch + 0.025f, 1f);
+            jetAudioSource.volume = Mathf.Min(jetAudioSource.volume + increment, targetVolume);
+            jetAudioSource.pitch = Mathf.Min(jetAudioSource.pitch + increment, targetPitch);
             yield return wait;
         }
     }
 
     private IEnumerator JetFadeOut()
     {
-        Debug.Log("Jet Fade Out");
-
         WaitForSeconds wait = new WaitForSeconds(fadeControlRate);
+        float increment = fadeControlRate / jetFadeTime;
 
         while (jetAudioSource.volume > 0f)
         {
-            jetAudioSource.volume = Mathf.Max(jetAudioSource.volume - 0.05f, 0f);
-            jetAudioSource.pitch = Mathf.Max(jetAudioSource.pitch - 0.025f, 0.5f);
+            jetAudioSource.volume = Mathf.Max(jetAudioSource.volume - increment, 0f);
+            jetAudioSource.pitch = Mathf.Max(jetAudioSource.pitch - increment, startPitch);
             yield return wait;
         }
 
         jetAudioSource.volume = 0f;
-        jetAudioSource.pitch = 0.5f;
+        jetAudioSource.pitch = startPitch;
 
         jetAudioSource.Stop();
     }
