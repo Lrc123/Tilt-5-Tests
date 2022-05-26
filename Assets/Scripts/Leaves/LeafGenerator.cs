@@ -62,10 +62,13 @@ public class LeafGenerator : MonoBehaviour
 
     void Generate(int amount)
     {
-        //Quaternion rot = new Quaternion(Random.Range(0f, 90f), Random.Range(0f, 90f), Random.Range(0f, 90f), Random.Range(0f, 90f));
         for (int i = 0; i < amount; i++)
         {
-            Instantiate(leaf, transform.position + new Vector3(Random.Range(-7.5f, 7.5f), -transform.position.y, Random.Range(-7.5f, 7.5f)), Quaternion.identity, transform);
+            Quaternion rot = new Quaternion(Random.Range(0f, 90f), Random.Range(0f, 90f), Random.Range(0f, 90f), Random.Range(0f, 90f));
+            var card = Instantiate(leaf, transform.position + new Vector3(Random.Range(-7.5f, 7.5f), -transform.position.y + 1f, Random.Range(-7.5f, 7.5f)), rot, transform);
+            Material newMat = materials[Random.Range(0, materials.Length)];
+            card.GetComponent<Renderer>().material = newMat;
+            card.transform.GetChild(0).GetComponent<Renderer>().material = newMat;
         }
     }
 
