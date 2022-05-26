@@ -1,21 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LeafGenerator : MonoBehaviour
 {
     public GameObject leaf;
+    public GameObject card;
 
     public int randAmount;
 
     public Texture2D texture;
 
-    public Material[] materials;
+    public Material[] cardMaterials;
+    public Material[] leafMaterials;
 
     void Start()
     {
         //GenerateBaseOnTexture();
         Generate(randAmount);
+
+        StartCoroutine(AutumnLeaves());
     }
 
     // Update is called once per frame
@@ -23,11 +28,52 @@ public class LeafGenerator : MonoBehaviour
     {
         if (transform.childCount == 0)
         {
-            Debug.Log("Clear!");
+            //Debug.Log("Clear!");
             //GenerateBaseOnTexture();
-            Generate(randAmount);
+            //Generate(randAmount);
+
+            ClearLevel();
         }
-        
+    }
+
+    public void ClearLevel()
+    {
+        // Display clear screen
+
+        // Load next scene
+        int nextScene = (SceneManager.GetActiveScene().buildIndex + 1) % SceneManager.sceneCountInBuildSettings;
+        SceneManager.LoadScene(nextScene);
+    }
+
+
+
+    void GenerateWithNoise()
+    {
+
+    }
+
+    void Generate(int amount)
+    {
+        for (int i = 0; i < amount; i++)
+        {
+            float randVal = Random.value;
+            var objType = randVal < 0.5f ? leaf : card;
+
+            Quaternion rot = new Quaternion(Random.Range(0f, 90f), Random.Range(0f, 90f), Random.Range(0f, 90f), Random.Range(0f, 90f));
+            var obj = Instantiate(leaf, transform.position + new Vector3(Random.Range(-7f, 7f), Random.Range(-2f, 10f), Random.Range(-7f, 7f)), rot, transform);
+            Material newMat = randVal < 0.5f ? leafMaterials[Random.Range(0, leafMaterials.Length)] : cardMaterials[Random.Range(0, cardMaterials.Length)];
+            obj.GetComponent<Renderer>().material = newMat;
+            obj.transform.GetChild(0).GetComponent<Renderer>().material = newMat;
+        }
+    }
+
+    IEnumerator AutumnLeaves()
+    {
+        while (Time.timeSinceLevelLoad < 10f)
+        {
+            yield return new WaitForSeconds(Random.Range(1f, 2f));
+            Generate(Random.Range(1, 5));
+        }
     }
 
     void GenerateBaseOnTexture()
@@ -42,11 +88,11 @@ public class LeafGenerator : MonoBehaviour
                 {
                     Quaternion rot = new Quaternion(Random.Range(0f, 90f), Random.Range(0f, 90f), Random.Range(0f, 90f), Random.Range(0f, 90f));
 
-                    var go = Instantiate(leaf, new Vector3(i * leaf.transform.localScale.x - leaf.transform.localScale.x * texture.width / 2, 5 * leaf.transform.localScale.y , j * leaf.transform.localScale.z - texture.height * leaf.transform.localScale.z / 2) + transform.position, rot, transform);
+                    var go = Instantiate(leaf, new Vector3(i * leaf.transform.localScale.x - leaf.transform.localScale.x * texture.width / 2, 5 * leaf.transform.localScale.y, j * leaf.transform.localScale.z - texture.height * leaf.transform.localScale.z / 2) + transform.position, rot, transform);
                     go.GetComponent<Renderer>().material.color = (color);
-                    var go1 = Instantiate(leaf, new Vector3(i * leaf.transform.localScale.x - leaf.transform.localScale.x * texture.width / 2, 3 * leaf.transform.localScale.y , j * leaf.transform.localScale.z - texture.height * leaf.transform.localScale.z / 2) + transform.position, rot, transform);
+                    var go1 = Instantiate(leaf, new Vector3(i * leaf.transform.localScale.x - leaf.transform.localScale.x * texture.width / 2, 3 * leaf.transform.localScale.y, j * leaf.transform.localScale.z - texture.height * leaf.transform.localScale.z / 2) + transform.position, rot, transform);
                     go1.GetComponent<Renderer>().material.color = (color);
-                    var go2 = Instantiate(leaf, new Vector3(i * leaf.transform.localScale.x - leaf.transform.localScale.x * texture.width / 2, 1 * leaf.transform.localScale.y , j * leaf.transform.localScale.z - texture.height * leaf.transform.localScale.z / 2) + transform.position, rot, transform);
+                    var go2 = Instantiate(leaf, new Vector3(i * leaf.transform.localScale.x - leaf.transform.localScale.x * texture.width / 2, 1 * leaf.transform.localScale.y, j * leaf.transform.localScale.z - texture.height * leaf.transform.localScale.z / 2) + transform.position, rot, transform);
                     go2.GetComponent<Renderer>().material.color = (color);
                 }
 
@@ -54,22 +100,4 @@ public class LeafGenerator : MonoBehaviour
         }
 
     }
-
-    void GenerateWithNoise()
-    {
-
-    }
-
-    void Generate(int amount)
-    {
-        for (int i = 0; i < amount; i++)
-        {
-            Quaternion rot = new Quaternion(Random.Range(0f, 90f), Random.Range(0f, 90f), Random.Range(0f, 90f), Random.Range(0f, 90f));
-            var card = Instantiate(leaf, transform.position + new Vector3(Random.Range(-7.5f, 7.5f), -transform.position.y + 1f, Random.Range(-7.5f, 7.5f)), rot, transform);
-            Material newMat = materials[Random.Range(0, materials.Length)];
-            card.GetComponent<Renderer>().material = newMat;
-            card.transform.GetChild(0).GetComponent<Renderer>().material = newMat;
-        }
-    }
-
 }

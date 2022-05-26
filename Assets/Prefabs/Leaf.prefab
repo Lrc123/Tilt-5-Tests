@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18ab92d60a7c48045bba7136d5f0e74a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  updraftAmount: 0.2
+  updraftAmount: 10
   isBlown: 0
 --- !u!1 &752052690525758830
 GameObject:

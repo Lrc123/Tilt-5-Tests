@@ -110,7 +110,7 @@ public class WindForce : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.tag.Equals("Ball") || other.tag.Equals("Leaf"))
+        if (other.tag.Equals("WindAffectable") || other.tag.Equals("Leaf"))
         {
             var distance = (other.transform.position - transform.parent.position).magnitude;
             //Physics.gravity = Vector3.down * 5;
@@ -126,17 +126,23 @@ public class WindForce : MonoBehaviour
             }
 
             Rigidbody rb = other.GetComponent<Rigidbody>();
-            rb.AddForce(actualForce, ForceMode.Impulse);
-
-            Vector3 updraftDir = Vector3.up * accelerator * updraftForce;
-            updraftDir = Quaternion.AngleAxis(Random.Range(-20f, 20f), Vector3.forward) * updraftDir;
-            updraftDir = Quaternion.AngleAxis(Random.Range(-20f, 20f), Vector3.right) * updraftDir;
-            rb.AddForce(updraftDir, ForceMode.Impulse);
-
-            var leafBounce = other.GetComponent<LeafBounce>();
-            if (leafBounce)
+            if (other.tag.Equals("Leaf"))
             {
-                leafBounce.isBlown = true;
+                rb.AddForce(actualForce, ForceMode.Impulse);
+                Vector3 updraftDir = Vector3.up * accelerator * updraftForce;
+                updraftDir = Quaternion.AngleAxis(Random.Range(-20f, 20f), Vector3.forward) * updraftDir;
+                updraftDir = Quaternion.AngleAxis(Random.Range(-20f, 20f), Vector3.right) * updraftDir;
+                rb.AddForce(updraftDir, ForceMode.Impulse);
+                if (accelerator > 0.1f)
+                {
+                    rb.GetComponent<LeafBounce>().isBlown = true;
+                }
+            }
+            else
+            {
+                Vector3 pushForward = actualForce;
+                pushForward.y = 0f;
+                rb.AddForce(pushForward, ForceMode.Impulse);
             }
         }
     }
