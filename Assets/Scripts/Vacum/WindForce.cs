@@ -37,6 +37,8 @@ public class WindForce : MonoBehaviour
 
     private SfxManager sfxManager;
 
+    private ParticleSystemForceField myField;
+
     Vector3 vacumAng;
 
     void Start()
@@ -44,6 +46,8 @@ public class WindForce : MonoBehaviour
         line = GetComponent<LineRenderer>();
 
         sfxManager = FindObjectOfType<SfxManager>();
+
+        myField = transform.GetChild(0).GetComponent<ParticleSystemForceField>();
     }
 
     void Update()
@@ -75,6 +79,7 @@ public class WindForce : MonoBehaviour
         {
             accelerator = TiltFive.Input.GetTrigger(ControllerIndex.Primary);
             //Debug.Log("accelerator" + accelerator + "time: " + Time.time);
+            myField.gravity = accelerator;
         }
         else
         {
@@ -143,9 +148,11 @@ public class WindForce : MonoBehaviour
             }
 
             Rigidbody rb = other.GetComponent<Rigidbody>();
+
             if (other.tag.Equals("Leaf"))
             {
                 rb.AddForce(actualForce, ForceMode.Impulse);
+                
                 Vector3 updraftDir = Vector3.up * accelerator * updraftForce;
                 updraftDir = Quaternion.AngleAxis(Random.Range(-20f, 20f), Vector3.forward) * updraftDir;
                 updraftDir = Quaternion.AngleAxis(Random.Range(-20f, 20f), Vector3.right) * updraftDir;
