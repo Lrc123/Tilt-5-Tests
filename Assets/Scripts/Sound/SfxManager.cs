@@ -22,19 +22,18 @@ public class SfxManager : MonoBehaviour
 
     private AudioSource audioSource;
     public AudioSource jetAudioSource;
+    public AudioSource leavesAudioSource;
     public AudioLowPassFilter jetAudioFilter;
 
     public AudioMixer audioMixer;
 
     private bool isJetPlaying;
-    private bool isTurboFading;
-    private float nonTurboPitch;
-    private float turboPitch = 1.2f;
+
+    private int numLeaves = 50;
 
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        audioMixer.GetFloat("PitchShift", out nonTurboPitch);
 
         //StartCoroutine(OscillateFilterFreq());
     }
@@ -61,6 +60,13 @@ public class SfxManager : MonoBehaviour
         audioSource.PlayOneShot(scoreSounds[scoreIndex]);
     }
 
+    public void UpdateLeaves(int add)
+    {
+        numLeaves += add;
+        float amount = Mathf.Lerp(0f, 1f, numLeaves / 50f);
+        leavesAudioSource.volume = amount;
+    }
+
     public void PlayJetSound()
     {
         if (!isJetPlaying)
@@ -85,18 +91,12 @@ public class SfxManager : MonoBehaviour
 
     public void StartTurbo()
     {
-        if (!isTurboFading)
-        {
-            audioMixer.SetFloat("PitchShift", 1.1f);
-        }
+        GetComponent<TurboFade>().StartTurbo();
     }
 
     public void StopTurbo()
     {
-        if (!isTurboFading)
-        {
-            audioMixer.SetFloat("PitchShift", nonTurboPitch);
-        }
+        GetComponent<TurboFade>().StopTurbo();
     }
 
     private IEnumerator JetFadeIn()

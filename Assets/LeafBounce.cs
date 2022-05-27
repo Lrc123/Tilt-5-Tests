@@ -14,10 +14,12 @@ public class LeafBounce : MonoBehaviour
     public bool isBlown;
 
     private Rigidbody rb;
+    private SfxManager sfxManager;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        sfxManager = FindObjectOfType<SfxManager>();
     }
 
     private void Update()
@@ -52,6 +54,7 @@ public class LeafBounce : MonoBehaviour
         if (collision.gameObject.tag == "Ground")
         {
             isBlown = false;
+            sfxManager.UpdateLeaves(-1);
         }
     }
 }

@@ -53,6 +53,39 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!244 &-3974530395857548914
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 8581c0e71d28c0246bdf6741e981121d
+  m_EffectName: Attenuation
+  m_MixLevel: e7c9e7eaae7ae5446bf6ed103a06918f
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!243 &-1293346778008134341
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Leaves
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 8af3083bb74101049879a46c8baa68de
+  m_Children: []
+  m_Volume: dfd4e1e206fffbd4eb593fcd0b631fe1
+  m_Pitch: 349004a8f52f5704a9d92721264b5151
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -3974530395857548914}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!241 &24100000
 AudioMixerController:
   m_ObjectHideFlags: 0
@@ -80,6 +113,7 @@ AudioMixerController:
     - 98fd69d79bc9d754f92149efe4f3aec2
     - a984b311c860ab446874849efd760e99
     - a5c8574d4b6243445836de78f28576ae
+    - 8af3083bb74101049879a46c8baa68de
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -164,6 +198,7 @@ AudioMixerGroupController:
   m_GroupID: ca51609eb879c6849a1940591b51e33e
   m_Children:
   - {fileID: 8866259359382690852}
+  - {fileID: -1293346778008134341}
   m_Volume: e69d62490125d5a479db2a2257fdb0bd
   m_Pitch: cff43b8d80a73354cbdf1fc0b3b67e0e
   m_Send: 00000000000000000000000000000000

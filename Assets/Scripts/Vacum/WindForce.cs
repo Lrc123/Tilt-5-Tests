@@ -160,6 +160,7 @@ public class WindForce : MonoBehaviour
                 if (accelerator > 0.1f)
                 {
                     rb.GetComponent<LeafBounce>().isBlown = true;
+                    sfxManager.UpdateLeaves(1);
                 }
             }
             else
