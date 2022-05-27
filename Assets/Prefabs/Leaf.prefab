@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 752052690525993292}
-  - component: {fileID: 752052690507492844}
   - component: {fileID: 5990461163570970630}
   - component: {fileID: 8980302536053674585}
   - component: {fileID: 7909205697324757731}
@@ -37,29 +36,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!205 &752052690507492844
-LODGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 752052690525758828}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0.050256874, z: -0.0047725597}
-  m_Size: 0.09352019
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LastLODIsBillboard: 0
-  m_LODs:
-  - screenRelativeHeight: 0.25
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 752052690523569068}
-  - screenRelativeHeight: 0.01
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 0}
-  m_Enabled: 0
 --- !u!54 &5990461163570970630
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -143,7 +119,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18ab92d60a7c48045bba7136d5f0e74a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  updraftAmount: 10
   isBlown: 0
 --- !u!1 &752052690525758830
 GameObject:

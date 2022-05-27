@@ -11,6 +11,8 @@ TagManager:
   - Leaf
   - Ground
   - Jiggle
+  - Cone
+  - BadObject
   layers:
   - Default
   - TransparentFX

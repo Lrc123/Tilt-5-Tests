@@ -294,6 +294,7 @@ GameObject:
   - component: {fileID: 3919878232714371531}
   - component: {fileID: 3919878232714371530}
   - component: {fileID: 5015982885719480590}
+  - component: {fileID: 8244544623340899876}
   m_Layer: 0
   m_Name: SfxManager
   m_TagString: Untagged
@@ -463,7 +464,7 @@ MonoBehaviour:
   fadeControlRate: 0.01
   startPitch: 0.1
   targetPitch: 0.3
-  targetVolume: 0.75
+  targetVolume: 1
   jetAudioSource: {fileID: 3919878230934521374}
   leavesAudioSource: {fileID: 2836868457766883871}
   jetAudioFilter: {fileID: 3919878230934521375}
@@ -484,6 +485,21 @@ MonoBehaviour:
   fadeControlRate: 0.01
   turboPitch: 1.2
   audioMixer: {fileID: 24100000, guid: da442d5aa12e6874db506f6d364b3a96, type: 2}
+--- !u!114 &8244544623340899876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3919878232714371533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0c7b3ee5e77e4444bf4cf72869b32bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeControlRate: 0.01
+  maxVolume: 0.7
+  leavesAudioSource: {fileID: 2836868457766883871}
 --- !u!1 &4319403060398764739
 GameObject:
   m_ObjectHideFlags: 0

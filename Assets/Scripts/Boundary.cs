@@ -13,9 +13,10 @@ public class Boundary : MonoBehaviour
     private bool isOut;
     private Rigidbody rb;
     private GameObject obj;
-
+    private SfxManager sfxManager;
     private void Start()
     {
+        sfxManager = FindObjectOfType<SfxManager>();
         timeFactor = 1 / timeToGo;
     }
 
@@ -42,26 +43,11 @@ public class Boundary : MonoBehaviour
             //Debug.Log("out");
             coll.GetComponent<MeshRenderer>().enabled = false;
             Destroy(coll.gameObject, timeToKill);
+            sfxManager.UpdateLeaves(-1);
 
             //isOut = true;
             //rb = coll.attachedRigidbody;
             //lastSpeed = rb.velocity.magnitude;
-        }
-    }
-
-    IEnumerator Kill(GameObject obj)
-    {
-        yield return new WaitForSeconds(timeToKill);
-        if (obj)
-        {
-            Destroy(obj);
-            //obj.SetActive(false);
-            //obj = null;
-            Debug.Log("Killed");
-        }
-        else
-        {
-            Debug.Log("Object is null");
         }
     }
 

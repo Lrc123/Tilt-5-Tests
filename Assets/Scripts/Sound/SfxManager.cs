@@ -30,11 +30,12 @@ public class SfxManager : MonoBehaviour
     private bool isJetPlaying;
 
     private int numLeaves = 50;
+    private LeavesFade leavesFade;
 
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
-
+        leavesFade = GetComponent<LeavesFade>();
         //StartCoroutine(OscillateFilterFreq());
     }
 
@@ -62,9 +63,7 @@ public class SfxManager : MonoBehaviour
 
     public void UpdateLeaves(int add)
     {
-        numLeaves += add;
-        float amount = Mathf.Lerp(0f, 1f, numLeaves / 50f);
-        leavesAudioSource.volume = amount;
+        leavesFade.UpdateLeaves(add);
     }
 
     public void PlayJetSound()
