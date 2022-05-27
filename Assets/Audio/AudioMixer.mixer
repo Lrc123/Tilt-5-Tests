@@ -71,6 +71,8 @@ AudioMixerController:
   m_ExposedParameters:
   - guid: c165d15142dc71e45a667069b1b6cafe
     name: FilterFreq
+  - guid: f9e30aa89a7a96744ac48657ab4e5e7d
+    name: PitchShift
   m_AudioMixerGroupViews:
   - guids:
     - 9ab05e0e7ef41304a9732569b7a4e86b

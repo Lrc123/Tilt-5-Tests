@@ -6,6 +6,7 @@ using TiltFive;
 public class LeafBounce : MonoBehaviour
 {
     float updraftAmount = 0.7f;
+    float twistAmount = 5f;
 
     bool isFallen;
 
@@ -37,6 +38,10 @@ public class LeafBounce : MonoBehaviour
             dir = Quaternion.AngleAxis(Random.Range(-60f, 60f), Vector3.up) * dir;
 
             rb.AddForce(updraftAmount * dir);
+
+            Vector3 tor = new Vector3(Random.value, Random.value, Random.value);
+            tor *= twistAmount;
+            rb.AddTorque(tor, ForceMode.Impulse);
 
             //Vector3 towardCam = (TiltFive.Glasses.position - transform.position).normalized * updraftAmount;
         }

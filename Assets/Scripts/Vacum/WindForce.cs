@@ -13,6 +13,8 @@ public class WindForce : MonoBehaviour
 
     public float windForce;
 
+    public float turboMult = 2f;
+
     public float updraftForce = 0.04f;
 
     public float maxDistance = 10f;
@@ -97,6 +99,21 @@ public class WindForce : MonoBehaviour
 
             sfxManager.PlayJetSound();
         }
+
+        if (TiltFive.Input.GetButton(TiltFive.Input.WandButton.One))
+        {
+            accelerator *= turboMult;
+            
+        }
+        if (TiltFive.Input.GetButtonDown(TiltFive.Input.WandButton.One))
+        {
+            sfxManager.StartTurbo();
+        }
+        else if (TiltFive.Input.GetButtonUp(TiltFive.Input.WandButton.One))
+        {
+            sfxManager.StopTurbo();
+        }
+
         windForce = accelerator * maxWindForce;
         forceDir = vacumDir;
     }
@@ -110,7 +127,7 @@ public class WindForce : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.tag.Equals("WindAffectable") || other.tag.Equals("Leaf"))
+        if (accelerator > 0f && (other.tag.Equals("WindAffectable") || other.tag.Equals("Leaf")))
         {
             var distance = (other.transform.position - transform.parent.position).magnitude;
             //Physics.gravity = Vector3.down * 5;
@@ -144,6 +161,11 @@ public class WindForce : MonoBehaviour
                 pushForward.y = 0f;
                 rb.AddForce(pushForward, ForceMode.Impulse);
             }
+        }
+        if (accelerator > 0f && other.tag.Equals("Jiggle"))
+        {
+            Debug.Log("Jiggle");
+            other.GetComponent<Jiggle>().PlayJiggle(accelerator);
         }
     }
 

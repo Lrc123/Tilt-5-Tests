@@ -27,10 +27,14 @@ public class SfxManager : MonoBehaviour
     public AudioMixer audioMixer;
 
     private bool isJetPlaying;
+    private bool isTurboFading;
+    private float nonTurboPitch;
+    private float turboPitch = 1.2f;
 
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        audioMixer.GetFloat("PitchShift", out nonTurboPitch);
 
         //StartCoroutine(OscillateFilterFreq());
     }
@@ -76,6 +80,22 @@ public class SfxManager : MonoBehaviour
             StopAllCoroutines();
             StartCoroutine(JetFadeOut());
             isJetPlaying = false;
+        }
+    }
+
+    public void StartTurbo()
+    {
+        if (!isTurboFading)
+        {
+            audioMixer.SetFloat("PitchShift", 1.1f);
+        }
+    }
+
+    public void StopTurbo()
+    {
+        if (!isTurboFading)
+        {
+            audioMixer.SetFloat("PitchShift", nonTurboPitch);
         }
     }
 

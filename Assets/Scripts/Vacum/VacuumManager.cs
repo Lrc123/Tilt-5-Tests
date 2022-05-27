@@ -27,7 +27,7 @@ public class VacuumManager : MonoBehaviour
     {
         if (transform.localPosition.y < 8f)
         {
-            Debug.Log("vacuum pos");
+            //Debug.Log("vacuum pos");
             Vector3 newPos = transform.localPosition;
             newPos.y = 8f;
             transform.localPosition = newPos;

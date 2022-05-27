@@ -10,6 +10,7 @@ TagManager:
   - Ball
   - Leaf
   - Ground
+  - Jiggle
   layers:
   - Default
   - TransparentFX
