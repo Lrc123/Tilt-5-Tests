@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class SfxManager : MonoBehaviour
 {
@@ -23,11 +24,26 @@ public class SfxManager : MonoBehaviour
     public AudioSource jetAudioSource;
     public AudioLowPassFilter jetAudioFilter;
 
+    public AudioMixer audioMixer;
+
     private bool isJetPlaying;
 
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
+
+        //StartCoroutine(OscillateFilterFreq());
+    }
+
+    IEnumerator OscillateFilterFreq()
+    {
+        while (enabled)
+        {
+            float newVal = Mathf.Sin(0.5f * Time.timeSinceLevelLoad % (2 * Mathf.PI)) * 0.5f + 0.5f;
+            newVal = 1250f * newVal + 250f;
+            audioMixer.SetFloat("FilterFreq", newVal);
+            yield return new WaitForFixedUpdate();
+        }
     }
 
     public void PlayBumperSound()
