@@ -25,54 +25,22 @@ public class Boundary : MonoBehaviour
 
     private void Update()
     {
-        // DEPRECATED - Leaves blow away fast enough to not need this
-        //if (isOut)
-        //{
-        //    if (lastSpeed > rb.velocity.magnitude && lastSpeed < escapeSpeed)
-        //    {
-        //        Debug.Log("slow");
-        //        //StopAllCoroutines();
-        //        //StartCoroutine(BlownAway());
-        //        isOut = false;
-        //    }
-        //    lastSpeed = rb.velocity.magnitude;
-        //}
+
     }
 
     private void OnTriggerEnter(Collider coll)
     {
         if (coll.tag == "Leaf" || coll.tag == "WindAffectable")
         {
-            //Debug.Log("out");
-            coll.GetComponent<MeshRenderer>().enabled = false;
-            Destroy(coll.gameObject, timeToKill);
-            objectCount.UpdateCount(1);
-
-            //isOut = true;
-            //rb = coll.attachedRigidbody;
-            //lastSpeed = rb.velocity.magnitude;
+            coll.GetComponent<KillOffscreen>().isMarked = true;
         }
     }
 
-    //IEnumerator BlownAway()
-    //{
-    //    Vector3 dir = rb.velocity.normalized;
-    //    float speed = rb.velocity.magnitude;
-    //    float startSpeed = speed;
-    //    Debug.Log("Start speed: " + startSpeed + ", escape speed: " + escapeSpeed);
-
-    //    float t = 0;
-    //    while (t < timeToGo)
-    //    {
-    //        float y = curve.Evaluate(t * timeFactor);
-    //        y *= escapeSpeed;
-    //        y += startSpeed;
-    //        rb.velocity = y * dir;
-    //        Debug.Log(y);
-    //        t += Time.deltaTime;
-    //        yield return null;
-    //    }
-
-    //    StartCoroutine(Kill());
-    //}
+    private void OnTriggerExit(Collider coll)
+    {
+        if (coll.tag == "Leaf" || coll.tag == "WindAffectable")
+        {
+            coll.GetComponent<KillOffscreen>().isMarked = false;
+        }
+    }
 }

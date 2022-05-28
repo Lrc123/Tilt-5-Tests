@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 6424541436158168968}
   - component: {fileID: 4505060334139507823}
   - component: {fileID: 991538079176718414}
+  - component: {fileID: 8435688710577677607}
   m_Layer: 0
   m_Name: Card
   m_TagString: Leaf
@@ -198,7 +199,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18ab92d60a7c48045bba7136d5f0e74a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  updraftAmount: 10
   isBlown: 0
 --- !u!65 &991538079176718414
 BoxCollider:
@@ -213,3 +213,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10, y: 1, z: 9.999999}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8435688710577677607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5347435752880896822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28e84ce80591f8347a0a169b4f0a7bfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMarked: 0

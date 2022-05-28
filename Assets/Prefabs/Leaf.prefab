@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8980302536053674585}
   - component: {fileID: 7909205697324757731}
   - component: {fileID: 3736437416782197808}
+  - component: {fileID: 3409011849887238716}
   m_Layer: 0
   m_Name: Leaf
   m_TagString: Leaf
@@ -120,6 +121,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isBlown: 0
+--- !u!114 &3409011849887238716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752052690525758828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28e84ce80591f8347a0a169b4f0a7bfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMarked: 0
 --- !u!1 &752052690525758830
 GameObject:
   m_ObjectHideFlags: 0
