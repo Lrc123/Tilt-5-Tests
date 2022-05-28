@@ -24,15 +24,6 @@ public class LeafBounce : MonoBehaviour
         sfxManager = FindObjectOfType<SfxManager>();
     }
 
-    private void Update()
-    {
-        if (transform.position.y < -10f)
-        {
-            FindObjectOfType<ObjectCount>().UpdateCount(1);
-            Destroy(this.gameObject);
-        }
-    }
-
     private void FixedUpdate()
     {
         if (isBlown)

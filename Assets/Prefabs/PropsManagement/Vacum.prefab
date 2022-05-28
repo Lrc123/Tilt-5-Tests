@@ -6879,6 +6879,7 @@ MonoBehaviour:
   WindForceObj: {fileID: 3540747224444066859}
   energyEmpty: {fileID: 1135683363}
   coolDownDuration: 2.5
+  energyUI: {fileID: 1171901268}
 --- !u!1001 &4847606528827156911
 PrefabInstance:
   m_ObjectHideFlags: 0

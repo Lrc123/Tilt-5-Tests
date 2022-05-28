@@ -814,7 +814,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 397794136}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 38fec22eb07255c4d88d4cb066dd3411, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -2235,7 +2235,7 @@ PrefabInstance:
       objectReference: {fileID: 1817927773}
     - target: {fileID: 8703702731716708787, guid: 8f07a5141a3944b429dcb29f21be0bc2, type: 3}
       propertyPath: m_VersionIndex
-      value: 973
+      value: 976
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f07a5141a3944b429dcb29f21be0bc2, type: 3}
@@ -9368,7 +9368,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1550
+  m_Name: pb_Mesh-2748
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -10502,34 +10502,6 @@ PrefabInstance:
     - target: {fileID: 5453319549410522379, guid: 1c481d21e5ff0c747b336faa8355ab58, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6529784891162983801, guid: 1c481d21e5ff0c747b336faa8355ab58, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6529784891331131818, guid: 1c481d21e5ff0c747b336faa8355ab58, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -9
-      objectReference: {fileID: 0}
-    - target: {fileID: 6529784891445760774, guid: 1c481d21e5ff0c747b336faa8355ab58, type: 3}
-      propertyPath: m_Center.x
-      value: 6.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6529784891445760775, guid: 1c481d21e5ff0c747b336faa8355ab58, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 6529784891830993987, guid: 1c481d21e5ff0c747b336faa8355ab58, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 6529784892484267146, guid: 1c481d21e5ff0c747b336faa8355ab58, type: 3}
-      propertyPath: m_Size.x
-      value: 64
-      objectReference: {fileID: 0}
-    - target: {fileID: 6529784892484267146, guid: 1c481d21e5ff0c747b336faa8355ab58, type: 3}
-      propertyPath: m_Size.z
-      value: 64
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c481d21e5ff0c747b336faa8355ab58, type: 3}

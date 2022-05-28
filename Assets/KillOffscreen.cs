@@ -21,5 +21,12 @@ public class KillOffscreen : MonoBehaviour
             isDead = true;
             Destroy(this.gameObject);
         }
+
+        if (transform.position.y < -10f && !isDead)
+        {
+            FindObjectOfType<ObjectCount>().UpdateCount(1);
+            isDead = true;
+            Destroy(this.gameObject);
+        }
     }
 }
