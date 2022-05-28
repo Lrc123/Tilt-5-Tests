@@ -85,7 +85,7 @@ public class LeafBounce : MonoBehaviour
             yield return null;
             timeStuck += Time.deltaTime;
         }
-        Debug.Log("Object stuck for 5 seconds");
+        //Debug.Log("Object stuck for 5 seconds");
         Destroy(this.gameObject, 1f);
     }
 }
