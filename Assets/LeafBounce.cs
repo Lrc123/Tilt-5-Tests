@@ -26,12 +26,11 @@ public class LeafBounce : MonoBehaviour
 
     private void Update()
     {
-
-        //if (!isFallen && transform.position.y <= 1f)
-        //{
-        //    isFallen = true;
-        //    GetComponent<Collider>().isTrigger = false;
-        //}
+        if (transform.position.y < -10f)
+        {
+            FindObjectOfType<ObjectCount>().UpdateCount(1);
+            Destroy(this.gameObject);
+        }
     }
 
     private void FixedUpdate()
@@ -50,6 +49,8 @@ public class LeafBounce : MonoBehaviour
 
             //Vector3 towardCam = (TiltFive.Glasses.position - transform.position).normalized * updraftAmount;
         }
+
+        
     }
 
     private void OnCollisionEnter(Collision collision)

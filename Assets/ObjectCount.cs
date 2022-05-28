@@ -2,22 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ObjectCount : MonoBehaviour
 {
-    private Text text;
+    private TextMeshProUGUI text;
     private int count = 0;
     private int totalCount;
 
     void Start()
     {
-        text = GetComponent<Text>();
+        text = GetComponent<TextMeshProUGUI>();
     }
 
     public void SetTotalCount(int num)
     {
         totalCount = num;
-        UpdateCount(0);
+        GetComponent<TextMeshProUGUI>().text = count.ToString() + " / " + totalCount.ToString();
+        print("set total count to " + totalCount);
     }
 
     public void UpdateCount(int add)

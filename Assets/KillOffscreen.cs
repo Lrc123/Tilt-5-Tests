@@ -5,6 +5,7 @@ using UnityEngine;
 public class KillOffscreen : MonoBehaviour
 {
     [HideInInspector] public bool isMarked = false;
+    private bool isDead = false;
     private Renderer renderer;
 
     private void Start()
@@ -17,7 +18,8 @@ public class KillOffscreen : MonoBehaviour
         if (isMarked && renderer.isVisible)
         {
             FindObjectOfType<ObjectCount>().UpdateCount(1);
-            Destroy(this.gameObject);
+            Destroy(this.gameObject, 2f);
+            isDead = true;
         }
     }
 }

@@ -481,7 +481,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09abf0cf0749c0246840c29e6d2a98bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turboFadeTime: 0.2
+  turboFadeTime: 0.4
   fadeControlRate: 0.01
   turboPitch: 1.2
   audioMixer: {fileID: 24100000, guid: da442d5aa12e6874db506f6d364b3a96, type: 2}
@@ -498,6 +498,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeControlRate: 0.01
+  fadeRate: 0.008
+  clampNumLeaves: 150
   maxVolume: 0.7
   leavesAudioSource: {fileID: 2836868457766883871}
 --- !u!1 &4319403060398764739

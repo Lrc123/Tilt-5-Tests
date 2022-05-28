@@ -53,7 +53,7 @@ public class VacuumManager : MonoBehaviour
             }
             else
             {
-                energyBarFillAmount -= 0.0001f * windLauncher.accelerator * windLauncher.accelerator;
+                energyBarFillAmount -= 0.00001f * windLauncher.accelerator * windLauncher.accelerator;
             }
         }
         else
