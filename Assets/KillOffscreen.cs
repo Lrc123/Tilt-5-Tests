@@ -15,11 +15,11 @@ public class KillOffscreen : MonoBehaviour
 
     private void Update()
     {
-        if (isMarked && renderer.isVisible)
+        if (isMarked && !renderer.isVisible && !isDead)
         {
             FindObjectOfType<ObjectCount>().UpdateCount(1);
-            Destroy(this.gameObject, 2f);
             isDead = true;
+            Destroy(this.gameObject);
         }
     }
 }

@@ -28,7 +28,7 @@ public class Boundary : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider coll)
+    private void OnTriggerStay(Collider coll)
     {
         if (coll.tag == "Leaf" || coll.tag == "WindAffectable")
         {

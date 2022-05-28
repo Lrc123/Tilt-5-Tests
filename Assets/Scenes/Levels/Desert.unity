@@ -38857,6 +38857,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 554658866, guid: ca0e089b7bd5bfb4da72f1fe14b9460a, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.48477888
+      objectReference: {fileID: 0}
+    - target: {fileID: 554658866, guid: ca0e089b7bd5bfb4da72f1fe14b9460a, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 554658866, guid: ca0e089b7bd5bfb4da72f1fe14b9460a, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 554658866, guid: ca0e089b7bd5bfb4da72f1fe14b9460a, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4286381824
+      objectReference: {fileID: 0}
     - target: {fileID: 3551001928702903573, guid: ca0e089b7bd5bfb4da72f1fe14b9460a, type: 3}
       propertyPath: m_Color.b
       value: 0.58392835
@@ -38960,6 +38976,22 @@ PrefabInstance:
     - target: {fileID: 3551001929959826825, guid: ca0e089b7bd5bfb4da72f1fe14b9460a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8499035373868331629, guid: ca0e089b7bd5bfb4da72f1fe14b9460a, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.48477888
+      objectReference: {fileID: 0}
+    - target: {fileID: 8499035373868331629, guid: ca0e089b7bd5bfb4da72f1fe14b9460a, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8499035373868331629, guid: ca0e089b7bd5bfb4da72f1fe14b9460a, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8499035373868331629, guid: ca0e089b7bd5bfb4da72f1fe14b9460a, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4286381824
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca0e089b7bd5bfb4da72f1fe14b9460a, type: 3}
