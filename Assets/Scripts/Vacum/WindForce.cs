@@ -75,20 +75,15 @@ public class WindForce : MonoBehaviour
         vacumAng = transform.rotation.eulerAngles;
         Vector3 vacumDir = transform.TransformDirection(Vector3.down);
 
-        if (!isCoolDown)
-        {
-            accelerator = TiltFive.Input.GetTrigger(ControllerIndex.Primary);
-            //Debug.Log("accelerator" + accelerator + "time: " + Time.time);
-            myField.gravity = accelerator;
-        }
-        else
-        {
-            accelerator = 0;
-        }
+        accelerator = TiltFive.Input.GetTrigger(ControllerIndex.Primary);
+        //Debug.Log("accelerator" + accelerator + "time: " + Time.time);
+        
+
+
         if (accelerator < 0.1f)
         {
             accelerator = 0f;
-            isRunning = false;
+            
             light.intensity = 0;
             windParticle.Stop();
 
@@ -96,7 +91,7 @@ public class WindForce : MonoBehaviour
         }
         else
         {
-            isRunning = true;
+            
             windParticle.startColor = Color.grey * windForce / maxWindForce;
             windParticle.startSpeed = windStartSpeed * windForce / maxWindForce;
             light.intensity = 100;
@@ -105,16 +100,32 @@ public class WindForce : MonoBehaviour
             sfxManager.PlayJetSound();
         }
 
-        if (TiltFive.Input.GetButton(TiltFive.Input.WandButton.One))
-        {
-            accelerator *= turboMult;
-            
+        myField.gravity = accelerator;
+
+        if (!isCoolDown)
+         {
+            if (TiltFive.Input.GetButton(TiltFive.Input.WandButton.One))
+            {
+                if (accelerator >= 0.1f)
+                {
+                    accelerator *= turboMult;
+                }
+            }
+            if (TiltFive.Input.GetButtonDown(TiltFive.Input.WandButton.One) && accelerator >= 0.1f)
+            {
+                isRunning = true;
+            }
+            else if (TiltFive.Input.GetButtonUp(TiltFive.Input.WandButton.One))
+            {
+                isRunning = false;
+            }
         }
-        if (TiltFive.Input.GetButtonDown(TiltFive.Input.WandButton.One))
+      
+        if (isRunning)
         {
             sfxManager.StartTurbo();
         }
-        else if (TiltFive.Input.GetButtonUp(TiltFive.Input.WandButton.One))
+        else
         {
             sfxManager.StopTurbo();
         }

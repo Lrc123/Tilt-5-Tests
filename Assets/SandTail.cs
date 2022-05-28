@@ -27,12 +27,13 @@ public class SandTail : MonoBehaviour
             isMoving = false;
         }
 
-        if (isMoving)
+        if (isMoving && isGround)
         {
             if (!transform.GetChild(0).GetChild(0).GetComponent<ParticleSystem>().isPlaying)
             {
                 transform.GetChild(0).GetChild(0).GetComponent<ParticleSystem>().Play();
             }
+            transform.GetChild(0).GetChild(0).GetComponent<TrailRenderer>().emitting = true;
         }
         else
         {
@@ -40,15 +41,8 @@ public class SandTail : MonoBehaviour
             {
                 transform.GetChild(0).GetChild(0).GetComponent<ParticleSystem>().Stop();
             }
-
-        }
-        if (isGround)
-        {
-            transform.GetChild(0).GetChild(0).GetComponent<TrailRenderer>().emitting = true;
-        }
-        else
-        {
             transform.GetChild(0).GetChild(0).GetComponent<TrailRenderer>().emitting = false;
+
         }
         
 

@@ -12,6 +12,8 @@ public class VacuumManager : MonoBehaviour
     public Animator energyEmpty;
     public float coolDownDuration = 1.5f;
 
+    public GameObject energyUI;
+
     private SfxManager sfxManager;
 
     
@@ -43,6 +45,14 @@ public class VacuumManager : MonoBehaviour
         //sfxManager.jetAudioFilter.cutoffFrequency = Mathf.Lerp(300f, 15000f, energyBarFillAmount);
 
         WindForce windLauncher = WindForceObj.GetComponent<WindForce>();
+        if (Mathf.Abs(energyBarFillAmount - 1) < 0.05f)
+        {
+            energyUI.SetActive(false);
+        }
+        else
+        {
+            energyUI.SetActive(true);
+        }
         if (windLauncher.isRunning)
         {
             if (energyBarFillAmount <= 0)
@@ -53,7 +63,7 @@ public class VacuumManager : MonoBehaviour
             }
             else
             {
-                energyBarFillAmount -= 0.00001f * windLauncher.accelerator * windLauncher.accelerator;
+                energyBarFillAmount -= 0.001f * windLauncher.accelerator * windLauncher.accelerator;
             }
         }
         else
