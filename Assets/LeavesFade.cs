@@ -5,6 +5,8 @@ using UnityEngine;
 public class LeavesFade : MonoBehaviour
 {
     public float fadeControlRate = 0.01f;
+    [Range(0.001f, 0.01f)] public float fadeRate = 0.008f;
+    [Range(100, 250)] public int clampNumLeaves = 150;
 
     private bool isFading;
     [Range(0f, 1f)] public float maxVolume = 1f;
@@ -20,10 +22,9 @@ public class LeavesFade : MonoBehaviour
 
     public void UpdateLeaves(int add)
     {
+        //print(numLeaves + add);
         numLeaves = Mathf.Clamp(numLeaves + add, 0, 100);
-        float amount = Mathf.Lerp(0f, 1f, numLeaves / 100f);
-        targetVolume = amount;
-        Debug.Log(numLeaves + ", " + targetVolume);
+        targetVolume = Mathf.Lerp(0f, maxVolume, numLeaves / 100f);
     }
 
     private void Update()

@@ -15,12 +15,15 @@ public class LeafGenerator : MonoBehaviour
     public Material[] cardMaterials;
     public Material[] leafMaterials;
 
+    private ObjectCount objectCount;
+
     void Start()
     {
+        objectCount = FindObjectOfType<ObjectCount>();
         //GenerateBaseOnTexture();
         Generate(randAmount);
 
-        StartCoroutine(AutumnLeaves());
+        //StartCoroutine(AutumnLeaves());
     }
 
     // Update is called once per frame
@@ -63,8 +66,10 @@ public class LeafGenerator : MonoBehaviour
             var obj = Instantiate(objType, transform.position + new Vector3(Random.Range(-7f, 7f), Random.Range(-2f, 10f), Random.Range(-7f, 7f)), rot, transform);
             Material newMat = randVal < 0.5f ? leafMaterials[Random.Range(0, leafMaterials.Length)] : cardMaterials[Random.Range(0, cardMaterials.Length)];
             obj.GetComponent<Renderer>().material = newMat;
-            obj.transform.GetChild(0).GetComponent<Renderer>().material = newMat;
+            obj.GetComponent<Renderer>().material = newMat;
         }
+
+        objectCount.SetTotalCount(transform.childCount);
     }
 
     IEnumerator AutumnLeaves()

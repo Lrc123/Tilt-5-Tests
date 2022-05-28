@@ -157,9 +157,10 @@ public class WindForce : MonoBehaviour
                 updraftDir = Quaternion.AngleAxis(Random.Range(-20f, 20f), Vector3.forward) * updraftDir;
                 updraftDir = Quaternion.AngleAxis(Random.Range(-20f, 20f), Vector3.right) * updraftDir;
                 rb.AddForce(updraftDir, ForceMode.Impulse);
-                if (accelerator > 0.1f)
+                LeafBounce leafBounce = rb.GetComponent<LeafBounce>();
+                if (accelerator > 0.1f && !leafBounce.isBlown)
                 {
-                    rb.GetComponent<LeafBounce>().isBlown = true;
+                    leafBounce.isBlown = true;
                     sfxManager.UpdateLeaves(1);
                 }
             }

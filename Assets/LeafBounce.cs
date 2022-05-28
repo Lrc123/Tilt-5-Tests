@@ -54,14 +54,14 @@ public class LeafBounce : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Ground" || collision.gameObject.tag == "WindAffectable" || collision.gameObject.tag == "Obstacle")
+        string tag = collision.gameObject.tag;
+        if (tag == "Ground" || tag == "WindAffectable" || tag == "Obstacle" || tag == "BadObject")
         {
             isBlown = false;
-            
+            sfxManager.UpdateLeaves(-1);
         }
-        sfxManager.UpdateLeaves(-1);
 
-        if (!isStuck && collision.gameObject.tag.Equals("BadObject"))
+        if (!isStuck && tag.Equals("BadObject"))
         {
             isStuck = true;
             StartCoroutine(Stuck());
@@ -87,5 +87,13 @@ public class LeafBounce : MonoBehaviour
         }
         //Debug.Log("Object stuck for 5 seconds");
         Destroy(this.gameObject, 1f);
+    }
+
+    private void OnDestroy()
+    {
+        if (isBlown)
+        {
+            sfxManager.UpdateLeaves(-1);
+        }
     }
 }

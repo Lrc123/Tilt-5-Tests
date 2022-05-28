@@ -14,8 +14,11 @@ public class Boundary : MonoBehaviour
     private Rigidbody rb;
     private GameObject obj;
     private SfxManager sfxManager;
+    private ObjectCount objectCount;
+
     private void Start()
     {
+        objectCount = FindObjectOfType<ObjectCount>();
         sfxManager = FindObjectOfType<SfxManager>();
         timeFactor = 1 / timeToGo;
     }
@@ -38,12 +41,12 @@ public class Boundary : MonoBehaviour
 
     private void OnTriggerEnter(Collider coll)
     {
-        if (coll.tag == "Leaf")
+        if (coll.tag == "Leaf" || coll.tag == "WindAffectable")
         {
             //Debug.Log("out");
             coll.GetComponent<MeshRenderer>().enabled = false;
             Destroy(coll.gameObject, timeToKill);
-            sfxManager.UpdateLeaves(-1);
+            objectCount.UpdateCount(1);
 
             //isOut = true;
             //rb = coll.attachedRigidbody;

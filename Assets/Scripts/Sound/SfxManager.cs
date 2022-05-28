@@ -36,18 +36,13 @@ public class SfxManager : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         leavesFade = GetComponent<LeavesFade>();
-        //StartCoroutine(OscillateFilterFreq());
     }
 
-    IEnumerator OscillateFilterFreq()
+    private void FixedUpdate()
     {
-        while (enabled)
-        {
-            float newVal = Mathf.Sin(0.5f * Time.timeSinceLevelLoad % (2 * Mathf.PI)) * 0.5f + 0.5f;
-            newVal = 1250f * newVal + 250f;
-            audioMixer.SetFloat("FilterFreq", newVal);
-            yield return new WaitForFixedUpdate();
-        }
+        float newVal = Mathf.Sin(1f * Time.timeSinceLevelLoad % (2 * Mathf.PI)) * 0.5f + 0.5f;
+        newVal = 1050f * newVal + 250f;
+        audioMixer.SetFloat("FilterFreq", newVal);
     }
 
     public void PlayBumperSound()
