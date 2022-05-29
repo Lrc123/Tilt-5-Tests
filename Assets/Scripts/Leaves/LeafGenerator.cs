@@ -20,6 +20,9 @@ public class LeafGenerator : MonoBehaviour
     private ObjectCount objectCount;
     private bool isClear;
 
+    public float multiFactor = 1;
+    public bool isTutorial;
+
     void Start()
     {
         clearShow.SetActive(false);
@@ -75,9 +78,10 @@ public class LeafGenerator : MonoBehaviour
             var objType = randVal < 0.5f ? leaf : card;
 
             Quaternion rot = new Quaternion(Random.Range(0f, 90f), Random.Range(0f, 90f), Random.Range(0f, 90f), Random.Range(0f, 90f));
-            var obj = Instantiate(objType, transform.position + new Vector3(Random.Range(-6f, 6f), Random.Range(-2f, 10f), Random.Range(-6f, 5f)), rot, transform);
+            var obj = Instantiate(objType, transform.position + multiFactor * new Vector3(Random.Range(-6f, 6f), Random.Range(-2f, 10f), Random.Range(-6f, 5f)), rot, transform);
             Material newMat = randVal < 0.5f ? leafMaterials[Random.Range(0, leafMaterials.Length)] : cardMaterials[Random.Range(0, cardMaterials.Length)];
             obj.GetComponent<Renderer>().material = newMat;
+            obj.GetComponent<LeafBounce>().isTutorial = isTutorial;
         }
 
         objectCount.SetTotalCount(transform.childCount);

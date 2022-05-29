@@ -14,6 +14,7 @@ public class VacuumManager : MonoBehaviour
 
     public GameObject energyUI;
 
+
     private SfxManager sfxManager;
 
     

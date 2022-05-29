@@ -41,6 +41,8 @@ public class WindForce : MonoBehaviour
 
     Vector3 vacumAng;
 
+    public GameObject pullTriggerImage;
+
     void Start()
     {
         line = GetComponent<LineRenderer>();
@@ -91,7 +93,10 @@ public class WindForce : MonoBehaviour
         }
         else
         {
-            
+            if (pullTriggerImage != null)
+            {
+                pullTriggerImage.SetActive(false);
+            }
             windParticle.startColor = Color.grey * windForce / maxWindForce;
             windParticle.startSpeed = windStartSpeed * windForce / maxWindForce;
             light.intensity = 100;

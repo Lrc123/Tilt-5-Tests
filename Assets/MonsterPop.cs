@@ -34,8 +34,10 @@ public class MonsterPop : MonoBehaviour
     {
         if (collision.collider.tag.Equals("Ground"))
         {
-            MPop.SetTrigger("Pop");
-            Destroy(MPop.gameObject, 2.8f);
+            //MPop.gameObject.transform.parent = FindObjectOfType<LeafGenerator>().transform;
+            FindObjectOfType<GoToEnd>().started = true;
+            //MPop.SetTrigger("Pop");
+            Destroy(MPop.gameObject, 3f);
             isEnd = true;
         }
     }

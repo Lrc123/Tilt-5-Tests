@@ -17,7 +17,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/Desert.unity
     guid: 7b3efd0b2d6543b46b2ddc9193b768c1
-  - enabled: 0
-    path: Assets/Scenes/StartScene.unity
-    guid: a8eb481b275944a46b6eed1850258d73
   m_configObjects: {}

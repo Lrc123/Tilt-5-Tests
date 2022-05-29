@@ -11,6 +11,7 @@ public class LeafBounce : MonoBehaviour
     [HideInInspector]
     public bool isBlown;
     private bool isStuck;
+    public bool isTutorial;
 
     private Rigidbody rb;
     private SfxManager sfxManager;
@@ -19,6 +20,10 @@ public class LeafBounce : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         sfxManager = FindObjectOfType<SfxManager>();
+        if(isTutorial)
+        {
+            transform.localScale *= 1.4f;
+        }
     }
 
     private void FixedUpdate()
@@ -26,8 +31,15 @@ public class LeafBounce : MonoBehaviour
         if (isBlown)
         {
             Vector3 dir = Vector3.up;
-            dir = Quaternion.AngleAxis(Random.Range(0f, -60f), Vector3.right) * dir;
-            dir = Quaternion.AngleAxis(Random.Range(-60f, 60f), Vector3.up) * dir;
+            if (!isTutorial)
+            {
+                dir = Quaternion.AngleAxis(Random.Range(0f, -60f), Vector3.right) * dir;
+                dir = Quaternion.AngleAxis(Random.Range(-60f, 60f), Vector3.up) * dir;
+            }
+            else
+            {
+                dir *= 3f;
+            }
 
             rb.AddForce(updraftAmount * dir);
 
