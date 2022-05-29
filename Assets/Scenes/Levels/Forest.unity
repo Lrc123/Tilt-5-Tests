@@ -6696,6 +6696,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2670688758234451342, guid: 11c60ed4154c74c4fb5e868b94946f96, type: 3}
     - target: {fileID: 8203890314734754288, guid: e8c15aa1a41f9664489c9aea2f92be8e, type: 3}
+      propertyPath: clearShow
+      value: 
+      objectReference: {fileID: 550428543}
+    - target: {fileID: 8203890314734754288, guid: e8c15aa1a41f9664489c9aea2f92be8e, type: 3}
       propertyPath: cardMaterials.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -9667,6 +9671,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca0e089b7bd5bfb4da72f1fe14b9460a, type: 3}
+--- !u!1 &550428543 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 401747759, guid: ca0e089b7bd5bfb4da72f1fe14b9460a, type: 3}
+  m_PrefabInstance: {fileID: 550428542}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &551398732
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14669,11 +14678,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMarked: 0
---- !u!198 &830901376 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 781943063209458900, guid: 8f07a5141a3944b429dcb29f21be0bc2, type: 3}
-  m_PrefabInstance: {fileID: 926442083}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &836217929
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21326,6 +21330,7 @@ MonoBehaviour:
   WindForceObj: {fileID: 926442087}
   energyEmpty: {fileID: 1135683363}
   coolDownDuration: 1.5
+  energyUI: {fileID: 0}
 --- !u!114 &926442089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21347,7 +21352,7 @@ MonoBehaviour:
   maxDistance: 20
   line: {fileID: 926442090}
   actualForce: {x: 0, y: 0, z: 0}
-  windParticle: {fileID: 830901376}
+  windParticle: {fileID: 0}
   windStartSpeed: 100
   isRunning: 0
   isCoolDown: 0

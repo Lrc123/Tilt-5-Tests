@@ -8,6 +8,7 @@ public class KillOffscreen : MonoBehaviour
     private bool isDead = false;
     private Renderer renderer;
     private bool isStuck;
+    private Coroutine stuckCoroutine;
 
     private void Start()
     {
@@ -29,36 +30,6 @@ public class KillOffscreen : MonoBehaviour
             isDead = true;
             Destroy(this.gameObject);
         }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (!isStuck && tag.Equals("BadObject"))
-        {
-            isStuck = true;
-            StartCoroutine(Stuck());
-        }
-    }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.tag.Equals("BadObject"))
-        {
-            isStuck = false;
-            StopCoroutine(Stuck());
-        }
-    }
-
-    IEnumerator Stuck()
-    {
-        float timeStuck = 0f;
-        while (timeStuck < 5f)
-        {
-            yield return null;
-            timeStuck += Time.deltaTime;
-        }
-        //Debug.Log("Object stuck for 5 seconds");
-        Destroy(this.gameObject);
     }
 
     IEnumerator FadeAndDestroy()

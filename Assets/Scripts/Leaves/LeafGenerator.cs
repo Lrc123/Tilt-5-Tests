@@ -8,6 +8,8 @@ public class LeafGenerator : MonoBehaviour
     public GameObject leaf;
     public GameObject card;
 
+    public GameObject clearShow;
+
     public int randAmount;
 
     public Texture2D texture;
@@ -19,6 +21,7 @@ public class LeafGenerator : MonoBehaviour
 
     void Start()
     {
+        clearShow.SetActive(false);
         objectCount = FindObjectOfType<ObjectCount>();
         //GenerateBaseOnTexture();
         Generate(randAmount);
@@ -42,13 +45,19 @@ public class LeafGenerator : MonoBehaviour
     public void ClearLevel()
     {
         // Display clear screen
+        clearShow.SetActive(true);
+        clearShow.GetComponent<Animator>().SetTrigger("Clear");
+        StartCoroutine(ToNextLevel());
+        
+    }
 
+    IEnumerator ToNextLevel()
+    {
+        yield return new WaitForSeconds(1.5f);
         // Load next scene
         int nextScene = (SceneManager.GetActiveScene().buildIndex + 1) % SceneManager.sceneCountInBuildSettings;
         SceneManager.LoadScene(nextScene);
     }
-
-
 
     void GenerateWithNoise()
     {

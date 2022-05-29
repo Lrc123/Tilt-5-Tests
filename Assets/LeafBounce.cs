@@ -8,10 +8,9 @@ public class LeafBounce : MonoBehaviour
     float updraftAmount = 0.7f;
     float twistAmount = 5f;
 
-    bool isFallen;
-
     [HideInInspector]
     public bool isBlown;
+    private bool isStuck;
 
     private Rigidbody rb;
     private SfxManager sfxManager;
@@ -50,6 +49,33 @@ public class LeafBounce : MonoBehaviour
             isBlown = false;
             sfxManager.UpdateLeaves(-1);
         }
+
+        if (!isStuck && tag.Equals("BadObject"))
+        {
+            isStuck = true;
+            StartCoroutine(Stuck());
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (isStuck && collision.gameObject.tag.Equals("BadObject"))
+        {
+            isStuck = false;
+            StopAllCoroutines();
+        }
+    }
+
+    IEnumerator Stuck()
+    {
+        float timeStuck = 0f;
+        while (timeStuck < 5f)
+        {
+            yield return null;
+            timeStuck += Time.deltaTime;
+        }
+        FindObjectOfType<ObjectCount>().UpdateCount(1);
+        Destroy(this.gameObject);
     }
 
     private void OnDestroy()
