@@ -50,6 +50,10 @@ public class LeafGenerator : MonoBehaviour
     {
         isClear = true;
         // Display clear screen
+        if (isTutorial)
+        {
+            FindObjectOfType<SfxManager>().musicAudioSource.Stop();
+        }
         FindObjectOfType<SfxManager>().PlayClear();
         clearShow.SetActive(true);
         clearShow.GetComponent<Animator>().SetTrigger("Clear");

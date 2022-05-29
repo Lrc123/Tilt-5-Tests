@@ -2047,6 +2047,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5605396247838702483, guid: 5e7206029c414ea4997f6794ed580fe6, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5605396247838702483, guid: 5e7206029c414ea4997f6794ed580fe6, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 53dce751c2e291244a3345f0d90cf0c2, type: 3}
+    - target: {fileID: 5605396247838702483, guid: 5e7206029c414ea4997f6794ed580fe6, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6621591210103567370, guid: 5e7206029c414ea4997f6794ed580fe6, type: 3}
       propertyPath: m_Enabled
       value: 1

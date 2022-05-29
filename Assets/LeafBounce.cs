@@ -11,7 +11,7 @@ public class LeafBounce : MonoBehaviour
     [HideInInspector]
     public bool isBlown;
     private bool isStuck;
-    public bool isTutorial;
+    [HideInInspector] public bool isTutorial;
 
     private Rigidbody rb;
     private SfxManager sfxManager;
