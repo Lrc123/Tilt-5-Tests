@@ -143,6 +143,12 @@ public class WindForce : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
+        Debug.Log(other.tag);
+        if (other.tag.Equals("Jiggle"))
+        {
+            other.GetComponent<Jiggle>().PlayJiggle(accelerator);
+            Debug.Log("Jiggle");
+        }
         if (accelerator > 0f && (other.tag.Equals("WindAffectable") || other.tag.Equals("Leaf")))
         {
             var distance = (other.transform.position - transform.parent.position).magnitude;
@@ -182,11 +188,7 @@ public class WindForce : MonoBehaviour
                 rb.AddForce(pushForward, ForceMode.Impulse);
             }
         }
-        if (accelerator > 0f && other.tag.Equals("Jiggle"))
-        {
-            Debug.Log("Jiggle");
-            other.GetComponent<Jiggle>().PlayJiggle(accelerator);
-        }
+       
     }
 
 }

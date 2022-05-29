@@ -5862,7 +5862,7 @@ GameObject:
   - component: {fileID: 608784219227606148}
   m_Layer: 0
   m_Name: Cone
-  m_TagString: Untagged
+  m_TagString: Cone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6551,7 +6551,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 964
+  m_VersionIndex: 958
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -6676,7 +6676,7 @@ MonoBehaviour:
   isRunning: 0
   isCoolDown: 0
   accelerator: 0
-  light: {fileID: 494659541014216801}
+  light: {fileID: 7838904065343325993}
 --- !u!1 &4601798504607023853
 GameObject:
   m_ObjectHideFlags: 0
