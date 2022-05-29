@@ -12416,6 +12416,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2836868457766883871, guid: 5e7206029c414ea4997f6794ed580fe6, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: abd5e0c00fec653459f8c1e3a63bbe9b, type: 3}
     - target: {fileID: 3919878232714371528, guid: 5e7206029c414ea4997f6794ed580fe6, type: 3}
       propertyPath: m_RootOrder
       value: 3
