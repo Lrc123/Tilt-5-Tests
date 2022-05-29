@@ -13,6 +13,7 @@ public class SfxManager : MonoBehaviour
     private AudioClip[] scoreSounds;
     public AudioClip jetOnSound;
     public AudioClip jetOffSound;
+    public AudioClip clearMusic;
 
     public float jetFadeTime = 0.2f;
     public float fadeControlRate = 0.01f;
@@ -23,6 +24,7 @@ public class SfxManager : MonoBehaviour
     private AudioSource audioSource;
     public AudioSource jetAudioSource;
     public AudioSource leavesAudioSource;
+    public AudioSource musicAudioSource;
     public AudioLowPassFilter jetAudioFilter;
 
     public AudioMixer audioMixer;
@@ -59,6 +61,21 @@ public class SfxManager : MonoBehaviour
     public void UpdateLeaves(int add)
     {
         leavesFade.UpdateLeaves(add);
+    }
+
+    public void PlayMusic()
+    {
+        musicAudioSource.Play();
+    }
+
+    public void StopMusic()
+    {
+        musicAudioSource.Stop();
+    }
+
+    public void PlayClear()
+    {
+        musicAudioSource.PlayOneShot(clearMusic);
     }
 
     public void PlayJetSound()

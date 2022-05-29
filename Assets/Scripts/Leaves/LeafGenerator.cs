@@ -18,6 +18,7 @@ public class LeafGenerator : MonoBehaviour
     public Material[] leafMaterials;
 
     private ObjectCount objectCount;
+    private bool isClear;
 
     void Start()
     {
@@ -32,19 +33,21 @@ public class LeafGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.childCount == 0)
+        if (transform.childCount == 0 && !isClear)
         {
             //Debug.Log("Clear!");
             //GenerateBaseOnTexture();
             //Generate(randAmount);
-
+ 
             ClearLevel();
         }
     }
 
     public void ClearLevel()
     {
+        isClear = true;
         // Display clear screen
+        FindObjectOfType<SfxManager>().PlayClear();
         clearShow.SetActive(true);
         clearShow.GetComponent<Animator>().SetTrigger("Clear");
         StartCoroutine(ToNextLevel());
@@ -53,7 +56,7 @@ public class LeafGenerator : MonoBehaviour
 
     IEnumerator ToNextLevel()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(3f);
         // Load next scene
         int nextScene = (SceneManager.GetActiveScene().buildIndex + 1) % SceneManager.sceneCountInBuildSettings;
         SceneManager.LoadScene(nextScene);
