@@ -32,6 +32,7 @@ public class Boundary : MonoBehaviour
     {
         if (coll.tag == "Leaf" || coll.tag == "WindAffectable")
         {
+            print("trigger stay");
             coll.GetComponent<KillOffscreen>().isMarked = true;
         }
     }

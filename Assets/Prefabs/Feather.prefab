@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6125037607564395890}
   - component: {fileID: 8735149338006861006}
   - component: {fileID: 5837271474360312570}
+  - component: {fileID: 6437956935011822401}
   m_Layer: 0
   m_Name: Feather
   m_TagString: Leaf
@@ -120,6 +121,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isBlown: 0
+--- !u!114 &6437956935011822401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2670688758234451342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28e84ce80591f8347a0a169b4f0a7bfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMarked: 0
 --- !u!1001 &4924514022802086174
 PrefabInstance:
   m_ObjectHideFlags: 0

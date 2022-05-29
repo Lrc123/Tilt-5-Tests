@@ -16,8 +16,6 @@ public class LeafBounce : MonoBehaviour
     private Rigidbody rb;
     private SfxManager sfxManager;
 
-    bool isStuck = false;
-
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -52,33 +50,6 @@ public class LeafBounce : MonoBehaviour
             isBlown = false;
             sfxManager.UpdateLeaves(-1);
         }
-
-        if (!isStuck && tag.Equals("BadObject"))
-        {
-            isStuck = true;
-            StartCoroutine(Stuck());
-        }
-    }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.tag.Equals("BadObject"))
-        {
-            isStuck = false;
-            StopAllCoroutines();
-        }
-    }
-
-    IEnumerator Stuck()
-    {
-        float timeStuck = 0f;
-        while (timeStuck < 5f)
-        {
-            yield return null;
-            timeStuck += Time.deltaTime;
-        }
-        //Debug.Log("Object stuck for 5 seconds");
-        Destroy(this.gameObject, 1f);
     }
 
     private void OnDestroy()
