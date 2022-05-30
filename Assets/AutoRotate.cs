@@ -17,12 +17,12 @@ public class AutoRotate : MonoBehaviour
 
     private void Update()
     {
-        if (isDefault && camPos.localPosition.z > 0f)
+        if (isDefault && camPos.localPosition.z > 4f)
         {
             board.Rotate(Vector3.up, 180f);
             isDefault = false;
         }
-        else if (!isDefault && camPos.localPosition.z < 0f)
+        else if (!isDefault && camPos.localPosition.z < -4f)
         {
             board.Rotate(Vector3.up, 180f);
             isDefault = true;

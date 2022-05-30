@@ -14,6 +14,7 @@ public class SfxManager : MonoBehaviour
     public AudioClip jetOnSound;
     public AudioClip jetOffSound;
     public AudioClip clearMusic;
+    public AudioClip monsterMusic;
 
     public float jetFadeTime = 0.2f;
     public float fadeControlRate = 0.01f;
@@ -78,6 +79,11 @@ public class SfxManager : MonoBehaviour
         musicAudioSource.PlayOneShot(clearMusic);
     }
 
+    public void PlayMonster()
+    {
+        musicAudioSource.PlayOneShot(monsterMusic);
+    }
+
     public void PlayJetSound()
     {
         if (!isJetPlaying)
@@ -98,6 +104,11 @@ public class SfxManager : MonoBehaviour
             StartCoroutine(JetFadeOut());
             isJetPlaying = false;
         }
+    }
+
+    public void FadeMusic()
+    {
+        musicAudioSource.GetComponent<MusicFade>().FadeMusic();
     }
 
     public void StartTurbo()

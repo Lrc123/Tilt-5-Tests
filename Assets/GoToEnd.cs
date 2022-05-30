@@ -27,9 +27,9 @@ public class GoToEnd : MonoBehaviour
         {
             timer += Time.deltaTime;
        
-            transform.position = Vector3.MoveTowards(transform.position, endPosition.position, 0.1f);
+            transform.position = Vector3.MoveTowards(transform.position, endPosition.position, 0.15f);
             transform.LookAt(lookAtPosition);
-            float newScale = Mathf.Lerp(startScale, 3 * startScale, timer / 2);
+            float newScale = Mathf.Lerp(startScale, 2.5f * startScale, timer / 1.5f);
             transform.localScale = newScale * Vector3.one;
             Debug.Log(newScale);
             

@@ -25,19 +25,20 @@ public class MonsterPop : MonoBehaviour
         if(transform.position.y < 0.5f)
         {
             MPop.SetTrigger("Pop");
-            Destroy(MPop.gameObject, 2.8f);
+            Destroy(MPop.gameObject, 2.2f);
             isEnd = true;
         }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.tag.Equals("Ground"))
+        if ((collision.collider.tag.Equals("Ground") || collision.collider.tag.Equals("Boundary")) && !isEnd)
         {
             //MPop.gameObject.transform.parent = FindObjectOfType<LeafGenerator>().transform;
             FindObjectOfType<GoToEnd>().started = true;
+            FindObjectOfType<SfxManager>().PlayMonster();
             //MPop.SetTrigger("Pop");
-            Destroy(MPop.gameObject, 3f);
+            Destroy(MPop.gameObject, 2.2f);
             isEnd = true;
         }
     }

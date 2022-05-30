@@ -236,12 +236,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f594f8d96cbac7d4fb89f7a9f047c1f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpeed: 0.001
-  maxSpeed: 2
-  minRotSpeed: 0.0001
+  minSpeed: 0.002
+  maxSpeed: 3
+  minRotSpeed: 0.0002
   maxRotSpeed: 6
-  minVol: 0.5
-  maxVol: 0.8
+  minVol: 0.4
+  maxVol: 0.7
   minPitch: 0.3
   maxPitch: 0.75
   clips:
@@ -10308,7 +10308,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c3c72c94b24035844893cb3b8d4ce8be, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.000158
+      value: 4.051214
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c3c72c94b24035844893cb3b8d4ce8be, type: 3}
       propertyPath: m_LocalPosition.y
@@ -10316,11 +10316,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c3c72c94b24035844893cb3b8d4ce8be, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.23850965
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c3c72c94b24035844893cb3b8d4ce8be, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7742818
+      value: 0.98255795
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c3c72c94b24035844893cb3b8d4ce8be, type: 3}
       propertyPath: m_LocalRotation.x
@@ -10328,7 +10328,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c3c72c94b24035844893cb3b8d4ce8be, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.63284105
+      value: 0.18595669
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c3c72c94b24035844893cb3b8d4ce8be, type: 3}
       propertyPath: m_LocalRotation.z
@@ -10340,7 +10340,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c3c72c94b24035844893cb3b8d4ce8be, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 78.52
+      value: 21.434
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c3c72c94b24035844893cb3b8d4ce8be, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -10373,11 +10373,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 494769749724241239, guid: 8311475ee5fdb5f4e85bb8fd3868a121, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.0871994
+      value: -0.78
       objectReference: {fileID: 0}
     - target: {fileID: 494769749724241239, guid: 8311475ee5fdb5f4e85bb8fd3868a121, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.9996314
+      value: -3.061
       objectReference: {fileID: 0}
     - target: {fileID: 494769749724241239, guid: 8311475ee5fdb5f4e85bb8fd3868a121, type: 3}
       propertyPath: m_LocalPosition.z
@@ -10452,9 +10452,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 397794136}
   serializedVersion: 2
-  m_Mass: 0.65
+  m_Mass: 0.5
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -20271,7 +20271,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2021049690898651311, guid: 255753dfcdea6b647bce59f5dc402349, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.6890399
+      value: 0.7567833
       objectReference: {fileID: 0}
     - target: {fileID: 2021049690898651311, guid: 255753dfcdea6b647bce59f5dc402349, type: 3}
       propertyPath: m_LocalRotation.x
@@ -20279,7 +20279,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2021049690898651311, guid: 255753dfcdea6b647bce59f5dc402349, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.72472346
+      value: -0.6536659
       objectReference: {fileID: 0}
     - target: {fileID: 2021049690898651311, guid: 255753dfcdea6b647bce59f5dc402349, type: 3}
       propertyPath: m_LocalRotation.z
@@ -20287,15 +20287,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2021049690898651311, guid: 255753dfcdea6b647bce59f5dc402349, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 1.2656254
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2021049690898651311, guid: 255753dfcdea6b647bce59f5dc402349, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 5.2143764
+      value: -81.637
       objectReference: {fileID: 0}
     - target: {fileID: 2021049690898651311, guid: 255753dfcdea6b647bce59f5dc402349, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 2.067188
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -20542,8 +20542,8 @@ MonoBehaviour:
   maxSpeed: 2
   minRotSpeed: 0.0001
   maxRotSpeed: 6
-  minVol: 1
-  maxVol: 1
+  minVol: 0.7
+  maxVol: 0.9
   minPitch: 0.3
   maxPitch: 0.75
   clips:
@@ -20710,8 +20710,8 @@ MonoBehaviour:
   maxSpeed: 2
   minRotSpeed: 0.0001
   maxRotSpeed: 6
-  minVol: 1
-  maxVol: 1
+  minVol: 0.7
+  maxVol: 0.9
   minPitch: 0.3
   maxPitch: 0.75
   clips:
@@ -20940,12 +20940,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f594f8d96cbac7d4fb89f7a9f047c1f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpeed: 0.001
-  maxSpeed: 2
-  minRotSpeed: 0.0001
+  minSpeed: 0.002
+  maxSpeed: 3
+  minRotSpeed: 0.0002
   maxRotSpeed: 6
-  minVol: 0.5
-  maxVol: 0.8
+  minVol: 0.4
+  maxVol: 0.7
   minPitch: 0.3
   maxPitch: 0.75
   clips:
@@ -21176,12 +21176,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f594f8d96cbac7d4fb89f7a9f047c1f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpeed: 0.001
-  maxSpeed: 2
-  minRotSpeed: 0.0001
+  minSpeed: 0.002
+  maxSpeed: 3
+  minRotSpeed: 0.0002
   maxRotSpeed: 6
-  minVol: 0.5
-  maxVol: 0.8
+  minVol: 0.4
+  maxVol: 0.7
   minPitch: 0.3
   maxPitch: 0.75
   clips:
@@ -21329,7 +21329,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6843009160552232294, guid: d5cd845de5e81f847b5a29267132626e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.090158
+      value: 4.411372
       objectReference: {fileID: 0}
     - target: {fileID: 6843009160552232294, guid: d5cd845de5e81f847b5a29267132626e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -21618,12 +21618,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f594f8d96cbac7d4fb89f7a9f047c1f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpeed: 0.001
-  maxSpeed: 2
-  minRotSpeed: 0.0001
+  minSpeed: 0.002
+  maxSpeed: 3
+  minRotSpeed: 0.0002
   maxRotSpeed: 6
-  minVol: 0.6
-  maxVol: 1
+  minVol: 0.4
+  maxVol: 0.7
   minPitch: 0.6
   maxPitch: 0.8
   clips:
@@ -21931,12 +21931,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f594f8d96cbac7d4fb89f7a9f047c1f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpeed: 0.001
-  maxSpeed: 2
-  minRotSpeed: 0.0001
+  minSpeed: 0.002
+  maxSpeed: 3
+  minRotSpeed: 0.0002
   maxRotSpeed: 6
-  minVol: 0.5
-  maxVol: 0.8
+  minVol: 0.4
+  maxVol: 0.7
   minPitch: 0.3
   maxPitch: 0.75
   clips:
@@ -26988,12 +26988,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f594f8d96cbac7d4fb89f7a9f047c1f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpeed: 0.001
-  maxSpeed: 2
-  minRotSpeed: 0.0001
+  minSpeed: 0.002
+  maxSpeed: 3
+  minRotSpeed: 0.0002
   maxRotSpeed: 6
-  minVol: 0.6
-  maxVol: 1
+  minVol: 0.4
+  maxVol: 0.7
   minPitch: 0.6
   maxPitch: 0.8
   clips:
@@ -27141,7 +27141,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6843009160552232294, guid: d5cd845de5e81f847b5a29267132626e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.920158
+      value: 3.2413723
       objectReference: {fileID: 0}
     - target: {fileID: 6843009160552232294, guid: d5cd845de5e81f847b5a29267132626e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -27629,12 +27629,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f594f8d96cbac7d4fb89f7a9f047c1f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpeed: 0.001
-  maxSpeed: 2
-  minRotSpeed: 0.0001
+  minSpeed: 0.002
+  maxSpeed: 3
+  minRotSpeed: 0.0002
   maxRotSpeed: 6
-  minVol: 0.5
-  maxVol: 0.8
+  minVol: 0.4
+  maxVol: 0.7
   minPitch: 0.3
   maxPitch: 0.75
   clips:
@@ -27932,12 +27932,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f594f8d96cbac7d4fb89f7a9f047c1f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpeed: 0.001
-  maxSpeed: 2
-  minRotSpeed: 0.0001
+  minSpeed: 0.002
+  maxSpeed: 3
+  minRotSpeed: 0.0002
   maxRotSpeed: 6
-  minVol: 0.5
-  maxVol: 0.8
+  minVol: 0.4
+  maxVol: 0.7
   minPitch: 0.3
   maxPitch: 0.75
   clips:
@@ -28061,7 +28061,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-60346
+  m_Name: pb_Mesh-98340
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -28332,12 +28332,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f594f8d96cbac7d4fb89f7a9f047c1f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpeed: 0.001
-  maxSpeed: 2
-  minRotSpeed: 0.0001
+  minSpeed: 0.002
+  maxSpeed: 3
+  minRotSpeed: 0.0002
   maxRotSpeed: 6
-  minVol: 0.5
-  maxVol: 0.8
+  minVol: 0.4
+  maxVol: 0.7
   minPitch: 0.3
   maxPitch: 0.75
   clips:
@@ -33455,7 +33455,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6843009160552232294, guid: d5cd845de5e81f847b5a29267132626e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.5387855
+      value: 3.86
       objectReference: {fileID: 0}
     - target: {fileID: 6843009160552232294, guid: d5cd845de5e81f847b5a29267132626e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -38487,11 +38487,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 494769749724241239, guid: 8311475ee5fdb5f4e85bb8fd3868a121, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.1726644
+      value: -2.0398638
       objectReference: {fileID: 0}
     - target: {fileID: 494769749724241239, guid: 8311475ee5fdb5f4e85bb8fd3868a121, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.9996314
+      value: -3.061
       objectReference: {fileID: 0}
     - target: {fileID: 494769749724241239, guid: 8311475ee5fdb5f4e85bb8fd3868a121, type: 3}
       propertyPath: m_LocalPosition.z
@@ -38653,12 +38653,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f594f8d96cbac7d4fb89f7a9f047c1f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpeed: 0.001
-  maxSpeed: 2
-  minRotSpeed: 0.0001
+  minSpeed: 0.002
+  maxSpeed: 3
+  minRotSpeed: 0.0002
   maxRotSpeed: 6
-  minVol: 0.5
-  maxVol: 0.8
+  minVol: 0.4
+  maxVol: 0.7
   minPitch: 0.3
   maxPitch: 0.75
   clips:
@@ -38873,12 +38873,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f594f8d96cbac7d4fb89f7a9f047c1f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpeed: 0.001
-  maxSpeed: 2
-  minRotSpeed: 0.0001
+  minSpeed: 0.002
+  maxSpeed: 3
+  minRotSpeed: 0.0002
   maxRotSpeed: 6
-  minVol: 0.6
-  maxVol: 1
+  minVol: 0.4
+  maxVol: 0.7
   minPitch: 0.6
   maxPitch: 0.8
   clips:

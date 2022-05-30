@@ -13,6 +13,7 @@ TagManager:
   - Jiggle
   - Cone
   - BadObject
+  - Boundary
   layers:
   - Default
   - TransparentFX

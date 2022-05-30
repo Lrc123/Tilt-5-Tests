@@ -33,11 +33,12 @@ public class LeafBounce : MonoBehaviour
             Vector3 dir = Vector3.up;
             if (!isTutorial)
             {
-                dir = Quaternion.AngleAxis(Random.Range(0f, -60f), Vector3.right) * dir;
+                dir = Quaternion.AngleAxis(Random.Range(0f, -10f), Vector3.right) * dir;
                 dir = Quaternion.AngleAxis(Random.Range(-60f, 60f), Vector3.up) * dir;
             }
             else
             {
+                dir = Quaternion.AngleAxis(45f, Vector3.right) * dir;
                 dir *= 3f;
             }
 
