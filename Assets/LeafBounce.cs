@@ -39,7 +39,7 @@ public class LeafBounce : MonoBehaviour
             else
             {
                 dir = Quaternion.AngleAxis(45f, Vector3.right) * dir;
-                dir *= 3f;
+                dir *= 4f;
             }
 
             rb.AddForce(updraftAmount * dir);
